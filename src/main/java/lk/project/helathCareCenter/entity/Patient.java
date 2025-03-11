@@ -1,9 +1,14 @@
 package lk.project.helathCareCenter.entity;
 
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,4 +24,7 @@ public class Patient {
     private String patientAge;
     private String mobileNumber;
     private String medicalHistory;
+
+    @OneToMany (mappedBy = "patient" , cascade = CascadeType.ALL)
+    private List<ProgramDetails> programDetails = new ArrayList<>();
 }
