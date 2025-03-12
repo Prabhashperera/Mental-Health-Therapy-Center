@@ -27,4 +27,7 @@ public class Patient {
 
     @OneToMany (mappedBy = "patient" , cascade = CascadeType.ALL)
     private List<ProgramDetails> programDetails = new ArrayList<>();
+
+    @OneToMany (mappedBy = "patientID" , cascade = CascadeType.ALL)
+    private List<TherapySession> therapySessions = new ArrayList<>();
 }
