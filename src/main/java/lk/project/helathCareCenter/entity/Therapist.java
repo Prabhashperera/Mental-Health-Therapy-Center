@@ -23,7 +23,7 @@ public class Therapist {
     @JoinColumn(name = "programID")
     private TherapyProgram therapyProgram;
 
-    @OneToMany (mappedBy = "therapistID" , cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "therapist" , cascade = CascadeType.ALL)
     private List<TherapySession> therapySessions = new ArrayList<>();
 
 }
