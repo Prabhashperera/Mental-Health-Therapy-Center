@@ -80,7 +80,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.example.mentalheaththerapycenter/lk.project.helathCareCenter.AppInitializer
+                                org.example.mentalheaththerapycenter/lk.project.healthCareCenter.AppInitializer
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

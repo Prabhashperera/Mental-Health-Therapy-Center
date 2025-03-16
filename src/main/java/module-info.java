@@ -7,8 +7,9 @@ module org.example.mentalheaththerapycenter {
     requires static lombok;
 
 
-    opens lk.project.helathCareCenter to javafx.fxml;
-    exports lk.project.helathCareCenter;
-    exports lk.project.helathCareCenter.controller to javafx.fxml;
-    opens lk.project.helathCareCenter.controller to javafx.fxml;
+    opens lk.project.healthCareCenter to javafx.fxml;
+    exports lk.project.healthCareCenter;
+    exports lk.project.healthCareCenter.controller to javafx.fxml;
+    opens lk.project.healthCareCenter.controller to javafx.fxml;
+    opens lk.project.healthCareCenter.entity to org.hibernate.orm.core;
 }

@@ -1,4 +1,4 @@
-package lk.project.helathCareCenter.controller;
+package lk.project.healthCareCenter.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

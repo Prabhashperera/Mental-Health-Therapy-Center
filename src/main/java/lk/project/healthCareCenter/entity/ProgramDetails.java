@@ -1,21 +1,18 @@
-package lk.project.helathCareCenter.entity;
+package lk.project.healthCareCenter.entity;
 
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 public class ProgramDetails {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private String id;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn (name = "patientID")
     private Patient patient;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn (name = "programID")
     private TherapyProgram therapyProgram;
 

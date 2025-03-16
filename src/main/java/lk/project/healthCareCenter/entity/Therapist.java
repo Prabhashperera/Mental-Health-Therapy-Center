@@ -1,4 +1,4 @@
-package lk.project.helathCareCenter.entity;
+package lk.project.healthCareCenter.entity;
 
 
 import jakarta.persistence.*;
@@ -19,7 +19,7 @@ public class Therapist {
     private String therapistID;
     private String therapistName;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "programID")
     private TherapyProgram therapyProgram;
 

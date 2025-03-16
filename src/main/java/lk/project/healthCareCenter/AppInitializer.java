@@ -1,4 +1,4 @@
-package lk.project.helathCareCenter;
+package lk.project.healthCareCenter;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

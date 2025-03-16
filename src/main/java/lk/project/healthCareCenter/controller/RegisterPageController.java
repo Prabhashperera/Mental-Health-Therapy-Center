@@ -1,13 +1,14 @@
-package lk.project.helathCareCenter.controller;
+package lk.project.healthCareCenter.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import lk.project.helathCareCenter.bo.RegisterPageBO;
-import lk.project.helathCareCenter.bo.impl.RegisterPageBOImpl;
-import lk.project.helathCareCenter.entity.Patient;
+import lk.project.healthCareCenter.bo.RegisterPageBO;
+import lk.project.healthCareCenter.bo.impl.RegisterPageBOImpl;
+import lk.project.healthCareCenter.entity.Patient;
 
 public class RegisterPageController {
     @FXML
@@ -32,8 +33,12 @@ public class RegisterPageController {
         String note = noteLabel.getText();
 
         Patient patient = new Patient(id, name, age, number, note);
-        registerPageBO.savePatient(patient);
-
+        boolean isSaved = registerPageBO.savePatient(patient);
+        if (isSaved) {
+            new Alert(Alert.AlertType.INFORMATION, "Patient registered successfully").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Error").show();
+        }
     }
 
 }
