@@ -21,7 +21,7 @@ public class Patient {
     @Id
     private String patientID;
     private String patientName;
-    private String patientAge;
+    private int patientAge;
     private String mobileNumber;
     private String medicalHistory;
 
@@ -33,4 +33,12 @@ public class Patient {
 
     @OneToMany (mappedBy = "patient" , cascade = CascadeType.ALL)
     private List<Payment> payments = new ArrayList<>();
+
+    public Patient(String id, String name, String age, String number, String note) {
+        this.patientID = id;
+        this.patientName = name;
+        this.patientAge = Integer.parseInt(age);
+        this.mobileNumber = number;
+        this.medicalHistory = note;
+    }
 }

@@ -10,4 +10,5 @@ module org.example.mentalheaththerapycenter {
     opens lk.project.helathCareCenter to javafx.fxml;
     exports lk.project.helathCareCenter;
     exports lk.project.helathCareCenter.controller to javafx.fxml;
+    opens lk.project.helathCareCenter.controller to javafx.fxml;
 }
