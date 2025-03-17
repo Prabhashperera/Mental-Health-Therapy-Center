@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegisterPageDAOImpl implements RegisterPageDAO {
+
+//    Crud Start
     @Override
     public boolean savePatient(Patient patient) {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
@@ -30,7 +32,6 @@ public class RegisterPageDAOImpl implements RegisterPageDAO {
         }
         return true;
     }
-
     @Override
     public boolean updatePatient(Patient patient) {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
@@ -54,6 +55,25 @@ public class RegisterPageDAOImpl implements RegisterPageDAO {
         }
         return true;
     }
+    @Override
+    public boolean deletePatient(String patientID) {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        Transaction tx = session.beginTransaction();
+        try {
+            Patient deletePatient = session.get(Patient.class , patientID);
+            session.remove(deletePatient);
+            tx.commit();
+        }catch(Exception e) {
+            tx.rollback();
+            System.out.println(e.getMessage());
+            return false;
+        }finally {
+            session.close();
+        }
+        return true;
+    }
+//    Crud END
+
 
     @Override
     public String generateNextID() throws SQLException {

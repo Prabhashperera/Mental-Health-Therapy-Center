@@ -30,4 +30,9 @@ public class RegisterPageBOImpl implements RegisterPageBO {
     public boolean updatePatient(Patient patient) {
         return registerDAO.updatePatient(patient);
     }
+
+    @Override
+    public boolean deletePatient(String patient) {
+        return registerDAO.deletePatient(patient);
+    }
 }

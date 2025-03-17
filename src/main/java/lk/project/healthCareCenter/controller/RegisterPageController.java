@@ -82,7 +82,6 @@ public class RegisterPageController implements Initializable {
             refreshPage();
         }
     }
-
     @FXML
     private void updateOnClick(ActionEvent actionEvent) throws SQLException {
         String id = idLabel.getText();
@@ -124,6 +123,22 @@ public class RegisterPageController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Select Patient to Update!!").show();
         }
     }
+    @FXML
+    private void deleteOnClick(ActionEvent actionEvent) throws SQLException {
+        String id = idLabel.getText();
+        if (id != null && !id.isEmpty()) {
+            boolean isDeleted = registerPageBO.deletePatient(id);
+            if (isDeleted) {
+                new Alert(Alert.AlertType.INFORMATION, "Patient deleted successfully").show();
+                refreshPage();
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Error, Try Again!!").show();
+                refreshPage();
+            }
+        }
+    }
+
+
     //External Methods
     public void refreshPage() throws SQLException {
         idLabel.setText("");
@@ -176,4 +191,5 @@ public class RegisterPageController implements Initializable {
         String nameRegex = "^[A-Za-z ]+$"; // Allows only letters and spaces
         return name.matches(nameRegex);
     }
+
 }
