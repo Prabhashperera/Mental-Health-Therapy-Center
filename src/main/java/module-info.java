@@ -12,4 +12,5 @@ module org.example.mentalheaththerapycenter {
     exports lk.project.healthCareCenter.controller to javafx.fxml;
     opens lk.project.healthCareCenter.controller to javafx.fxml;
     opens lk.project.healthCareCenter.entity to org.hibernate.orm.core, javafx.base;
+    opens lk.project.healthCareCenter.dto to org.hibernate.orm.core, javafx.base;
 }

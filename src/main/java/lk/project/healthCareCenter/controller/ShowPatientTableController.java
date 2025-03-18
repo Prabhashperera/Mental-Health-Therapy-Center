@@ -71,8 +71,6 @@ public class ShowPatientTableController implements Initializable {
             return false;
         }
     }
-
-
     public boolean selectPatientFromProgram() {
         Patient selectedPatient = patientTable.getSelectionModel().getSelectedItem();
         if (selectedPatient != null) {

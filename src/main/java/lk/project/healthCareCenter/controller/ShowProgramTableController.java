@@ -17,11 +17,10 @@ import lk.project.healthCareCenter.entity.TherapyProgram;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ShowProgramTableController implements Initializable {
-    private RegisterPageController registerPageController;
+    private SelectProgramPageController selectProgramPageController;
 
     @FXML
     private TableColumn<TherapyProgram, String> programID;
@@ -59,6 +58,7 @@ public class ShowProgramTableController implements Initializable {
     @FXML
     private void selectOnClick(ActionEvent actionEvent) {
         TherapyProgram selectedItem = programTable.getSelectionModel().getSelectedItem();
+        selectProgramPageController.setProgramID(selectedItem.getProgramID());
         if (selectedItem != null) {
 //            registerPageController.setSelectedProgram(selectedItem);
             // Retrieve the stage from the event source (e.g., the button)
@@ -67,8 +67,8 @@ public class ShowProgramTableController implements Initializable {
         }
     }
 
-    public void setRegisterController(RegisterPageController registerPageController) {
-        this.registerPageController = registerPageController;
+    public void setSelectProgramController(SelectProgramPageController selectProgramPageController) {
+        this.selectProgramPageController = selectProgramPageController;
     }
 
 }

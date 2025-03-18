@@ -141,20 +141,6 @@ public class RegisterPageController implements Initializable {
     }
 
 
-
-    @FXML
-    private void selectTherapyOnClick(ActionEvent actionEvent) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/popups/showProgramTable.fxml"));
-        Parent root = fxmlLoader.load();
-        ShowProgramTableController controller = fxmlLoader.getController();
-        controller.setRegisterController(this);
-        stage.setScene(new Scene(root));
-        stage.setTitle("Program Table");
-        stage.show();
-    }
-
-
     //External Methods
     public void refreshPage() throws SQLException {
         idLabel.setText("");
