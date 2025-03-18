@@ -11,6 +11,6 @@
     <!--    Syntax Selector for Every Database Query Language -->
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.hbm2ddl.auto">create-drop</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
   </session-factory>
 </hibernate-configuration>

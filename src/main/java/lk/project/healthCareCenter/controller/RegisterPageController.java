@@ -25,8 +25,6 @@ import java.util.ResourceBundle;
 
 public class RegisterPageController implements Initializable {
     @FXML
-    private Button therapyProgramButton;
-    @FXML
     private TextField ageLabel;
     @FXML
     private Label idLabel;
@@ -164,7 +162,6 @@ public class RegisterPageController implements Initializable {
         ageLabel.setText("");
         numberLabel.setText("");
         noteLabel.setText("");
-        therapyProgramButton.setText("Select Therapy Program");
         generateNextID();
     }
     public void generateNextID() throws SQLException {
@@ -182,10 +179,6 @@ public class RegisterPageController implements Initializable {
         stage.setScene(new Scene(root));
         stage.setTitle("Patient Table");
         stage.show();
-    }
-
-    public void setSelectedProgram(TherapyProgram selectedProgram) {
-        therapyProgramButton.setText(selectedProgram.getProgramName());
     }
     public void setSelectedPatient(Patient selectedPatient) {
         idLabel.setText(selectedPatient.getPatientID());

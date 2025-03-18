@@ -60,7 +60,7 @@ public class ShowProgramTableController implements Initializable {
     private void selectOnClick(ActionEvent actionEvent) {
         TherapyProgram selectedItem = programTable.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
-            registerPageController.setSelectedProgram(selectedItem);
+//            registerPageController.setSelectedProgram(selectedItem);
             // Retrieve the stage from the event source (e.g., the button)
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.close();

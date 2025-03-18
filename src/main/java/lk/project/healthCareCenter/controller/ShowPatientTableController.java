@@ -36,6 +36,7 @@ public class ShowPatientTableController implements Initializable {
     private TableColumn<Patient, String> number;
 
     RegisterPageController registerPageController;
+    SelectProgramPageController selectProgramPageController;
     RegisterPageBO registerPageBO = new RegisterPageBOImpl();
 
     @Override
@@ -59,10 +60,24 @@ public class ShowPatientTableController implements Initializable {
         patientTable.setItems(observableList);
     }
 
-    public boolean selectPatient() {
+    public boolean selectPatientFromRegister() {
         Patient selectedPatient = patientTable.getSelectionModel().getSelectedItem();
         if (selectedPatient != null) {
-            registerPageController.setSelectedPatient(selectedPatient); //Throw Selected Patient to Register Controller
+            System.out.println("registerPageController: " + registerPageController);
+            registerPageController.setSelectedPatient(selectedPatient);//Throw Selected Patient to Register Controller
+            return true;
+        }else {
+            new Alert(Alert.AlertType.ERROR, "No selected patient", ButtonType.OK).show();
+            return false;
+        }
+    }
+
+
+    public boolean selectPatientFromProgram() {
+        Patient selectedPatient = patientTable.getSelectionModel().getSelectedItem();
+        if (selectedPatient != null) {
+            System.out.println("ProgramPageController: " + selectProgramPageController);
+            selectProgramPageController.setPatientID(selectedPatient);//Throw Selected Patient to Register Controller
             return true;
         }else {
             new Alert(Alert.AlertType.ERROR, "No selected patient", ButtonType.OK).show();
@@ -75,13 +90,29 @@ public class ShowPatientTableController implements Initializable {
         this.registerPageController = registerPageController;
     }
 
-    public void selectOnClick(ActionEvent actionEvent) {
-        boolean isSelected = selectPatient();
-        if (isSelected) {
-            // Retrieve the stage from the event source (e.g., the button)
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            // Close the stage
-            stage.close();
+    //Initialize Select Program Controller Class
+    public void setSelectProgramController(SelectProgramPageController selectProgramPageController) {
+        this.selectProgramPageController = selectProgramPageController;
+    }
+
+    @FXML
+    private void selectOnClick(ActionEvent actionEvent) {
+        if(registerPageController != null) {
+            boolean isSelectedFromRegister = selectPatientFromRegister();
+            if (isSelectedFromRegister) {
+                // Retrieve the stage from the event source (e.g., the button)
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                // Close the stage
+                stage.close();
+            }
+        }else if(selectProgramPageController != null) {
+            boolean isSelectedFromProgram = selectPatientFromProgram();
+            if (isSelectedFromProgram) {
+                // Retrieve the stage from the event source (e.g., the button)
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                // Close the stage
+                stage.close();
+            }
         }
     }
 }
