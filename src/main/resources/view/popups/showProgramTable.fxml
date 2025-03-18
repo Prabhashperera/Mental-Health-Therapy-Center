@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="373.0" prefWidth="674.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.ShowProgramTableController">
+   <children>
+      <Text fill="#3700ff" layoutX="285.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROGRAM TABLE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TableView fx:id="programTable" layoutX="33.0" layoutY="58.0" prefHeight="250.0" prefWidth="606.0">
+        <columns>
+            <TableColumn id="programID" fx:id="programID" prefWidth="95.19995498657227" text="ProgramID" />
+            <TableColumn id="programName" fx:id="programName" prefWidth="257.6000213623047" text="Program Name" />
+            <TableColumn id="fee" fx:id="fee" prefWidth="129.5999755859375" text="Feee" />
+            <TableColumn id="duration" fx:id="duration" prefWidth="124.7999267578125" text="Duration" />
+        </columns>
+      </TableView>
+      <Button layoutX="522.0" layoutY="324.0" mnemonicParsing="false" onAction="#selectOnClick" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
+   </children>
+</AnchorPane>

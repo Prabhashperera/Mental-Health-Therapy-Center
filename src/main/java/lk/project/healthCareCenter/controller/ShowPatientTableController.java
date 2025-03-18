@@ -47,14 +47,14 @@ public class ShowPatientTableController implements Initializable {
         number.setCellValueFactory(new PropertyValueFactory<>("mobileNumber"));
 
         try {
-            loadTable();
+            loadPatientTable();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void loadTable() throws SQLException {
-        ArrayList<Patient> patients = registerPageBO.loadTable();
+    public void loadPatientTable() throws SQLException {
+        ArrayList<Patient> patients = registerPageBO.loadPatientTable();
         ObservableList<Patient> observableList = FXCollections.observableArrayList(patients);
         patientTable.setItems(observableList);
     }

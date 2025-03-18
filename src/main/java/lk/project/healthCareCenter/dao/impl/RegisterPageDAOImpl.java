@@ -2,6 +2,9 @@ package lk.project.healthCareCenter.dao.impl;
 
 import lk.project.healthCareCenter.dao.RegisterPageDAO;
 import lk.project.healthCareCenter.entity.Patient;
+import lk.project.healthCareCenter.entity.ProgramDetails;
+import lk.project.healthCareCenter.entity.ProgramDetailsId;
+import lk.project.healthCareCenter.entity.TherapyProgram;
 import lk.project.healthCareCenter.hibernateConfig.FactoryConfiguration;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -16,26 +19,54 @@ public class RegisterPageDAOImpl implements RegisterPageDAO {
 
 //    Crud Start
     @Override
-    public boolean savePatient(Patient patient) {
-        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
-        Transaction tx = session.beginTransaction();
+    public boolean savePatient(Patient patient , Session session) {
         try {
-            session.persist(patient);
-            tx.commit();
-            session.close();
+            session.persist(patient); //Save
             System.out.println("Save patient successful");
         }catch(Exception e) {
-            tx.rollback();
             System.out.println(e.getMessage());
             System.out.println("awl");
             return false;
         }
         return true;
     }
+
+//    @Override
+//    public boolean saveProgramDetails(Session session, Patient patient) {
+//        try {
+//            TherapyProgram existingProgram = session.get(TherapyProgram.class, therapyProgram.getProgramID());
+//            ProgramDetails details = new ProgramDetails();
+//            //Creating a CompositeID Object
+//            ProgramDetailsId programDetailsId = new ProgramDetailsId(therapyProgram.getProgramID(), patient.getPatientID());
+//            details.setId(programDetailsId); //Before Persist. We need to Initialize the CompositeIDs
+//            //Persisting
+//            details.setTherapyProgram(existingProgram);
+//            details.setPatient(patient);
+//            session.persist(details);
+//        }catch(Exception e) {
+//            System.out.println(e.getMessage());
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean updateProgramDetails(Session session, Patient patient) {
+//        try {
+//            List<TherapyProgram> existPrograms = session.get(TherapyProgram.class , therapyProgram.getProgramID());
+//            ProgramDetails details = session.get(ProgramDetails.class, patient.getPatientID());
+//            details.setTherapyProgram(therapyProgram);
+//            details.setPatient(patient);
+//            session.merge(details);
+//            return true;
+//        }catch(Exception e) {
+//            System.out.println(e.getMessage());
+//            return false;
+//        }
+//    }
+
     @Override
-    public boolean updatePatient(Patient patient) {
-        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
-        Transaction tx = session.beginTransaction();
+    public boolean updatePatient(Patient patient , Session session) {
         try {
             Patient updatePatient = session.get(Patient.class , patient.getPatientID());
             updatePatient.setPatientName(patient.getPatientName());
@@ -44,14 +75,10 @@ public class RegisterPageDAOImpl implements RegisterPageDAO {
             updatePatient.setMobileNumber(updatePatient.getMobileNumber());
             updatePatient.setMedicalHistory(updatePatient.getMedicalHistory());
             session.merge(updatePatient); //Merge Updated Patient
-            tx.commit();
-            session.close();
+
         } catch (HibernateException e) {
-            tx.rollback();
             System.out.println(e.getMessage());
             return false;
-        }finally {
-            session.close();
         }
         return true;
     }
@@ -72,6 +99,17 @@ public class RegisterPageDAOImpl implements RegisterPageDAO {
         }
         return true;
     }
+
+    @Override
+    public boolean saveProgramDetails(Session session, Patient patient) {
+        return true;
+    }
+
+    @Override
+    public boolean updateProgramDetails(Session session, Patient patient) {
+        return true;
+    }
+
 //    Crud END
 
 
@@ -98,15 +136,24 @@ public class RegisterPageDAOImpl implements RegisterPageDAO {
         }
         return "P001";
     }
-
     @Override
-    public ArrayList<Patient> loadTable() throws SQLException {
+    public ArrayList<Patient> loadPatientTable() throws SQLException {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
-        String hql = "FROM Patient";  // Assuming 'Patient' is your entity class name
+        String hql = "FROM Patient";
         Query query = session.createQuery(hql);
         List<Patient> patients = query.getResultList();
         session.close();
         return new ArrayList<>(patients);
+    }
+
+    @Override
+    public ArrayList<TherapyProgram> loadProgramTable() throws SQLException {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        String hql = "FROM TherapyProgram ";
+        Query query = session.createQuery(hql);
+        List<TherapyProgram> programs = query.getResultList();
+        session.close();
+        return new ArrayList<>(programs);
     }
 
 }

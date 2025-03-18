@@ -2,17 +2,28 @@ package lk.project.healthCareCenter.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 
 @Entity
 public class ProgramDetails {
-    @Id
-    private String id;
+    @EmbeddedId  // Use composite key
+    private ProgramDetailsId id;
 
     @ManyToOne
+    @MapsId("patientID")
     @JoinColumn (name = "patientID")
     private Patient patient;
 
     @ManyToOne
+    @MapsId("programID")
     @JoinColumn (name = "programID")
     private TherapyProgram therapyProgram;
 

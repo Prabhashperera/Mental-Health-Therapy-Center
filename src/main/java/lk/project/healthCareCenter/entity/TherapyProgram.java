@@ -16,7 +16,8 @@ import java.util.List;
 @Entity
 public class TherapyProgram {
     @Id
-    private String programId;
+    @Column(nullable = false, unique = true)
+    private String programID;
     private String programName;
     private String programDuration;
     private String programFee;

@@ -14,14 +14,18 @@ import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.RegisterPageBO;
 import lk.project.healthCareCenter.bo.impl.RegisterPageBOImpl;
 import lk.project.healthCareCenter.entity.Patient;
+import lk.project.healthCareCenter.entity.TherapyProgram;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class RegisterPageController implements Initializable {
+    @FXML
+    private Button therapyProgramButton;
     @FXML
     private TextField ageLabel;
     @FXML
@@ -139,6 +143,20 @@ public class RegisterPageController implements Initializable {
     }
 
 
+
+    @FXML
+    private void selectTherapyOnClick(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/popups/showProgramTable.fxml"));
+        Parent root = fxmlLoader.load();
+        ShowProgramTableController controller = fxmlLoader.getController();
+        controller.setRegisterController(this);
+        stage.setScene(new Scene(root));
+        stage.setTitle("Program Table");
+        stage.show();
+    }
+
+
     //External Methods
     public void refreshPage() throws SQLException {
         idLabel.setText("");
@@ -146,6 +164,7 @@ public class RegisterPageController implements Initializable {
         ageLabel.setText("");
         numberLabel.setText("");
         noteLabel.setText("");
+        therapyProgramButton.setText("Select Therapy Program");
         generateNextID();
     }
     public void generateNextID() throws SQLException {
@@ -165,6 +184,9 @@ public class RegisterPageController implements Initializable {
         stage.show();
     }
 
+    public void setSelectedProgram(TherapyProgram selectedProgram) {
+        therapyProgramButton.setText(selectedProgram.getProgramName());
+    }
     public void setSelectedPatient(Patient selectedPatient) {
         idLabel.setText(selectedPatient.getPatientID());
         nameLabel.setText(selectedPatient.getPatientName());
@@ -191,5 +213,4 @@ public class RegisterPageController implements Initializable {
         String nameRegex = "^[A-Za-z ]+$"; // Allows only letters and spaces
         return name.matches(nameRegex);
     }
-
 }
