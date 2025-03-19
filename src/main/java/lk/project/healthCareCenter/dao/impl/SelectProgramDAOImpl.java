@@ -93,6 +93,22 @@ public class SelectProgramDAOImpl implements SelectProgramDAO {
         return true;
     }
 
+    @Override
+    public boolean deleteProgramDetail(String patient, String program, Session session) {
+        try {
+            ProgramDetailsId compositeKey = new ProgramDetailsId(patient,program);
+            ProgramDetails details = session.get(ProgramDetails.class, compositeKey);
+            if (details != null) {
+                session.remove(details);
+                return true;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
 
 //    @Override
 //    public boolean updateProgram(String patientID, String newProgramID, String clickedPatientID, String clickedProgramID, Session session) {

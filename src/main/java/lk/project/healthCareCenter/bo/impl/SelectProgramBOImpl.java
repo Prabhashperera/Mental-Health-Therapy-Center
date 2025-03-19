@@ -34,13 +34,6 @@ public class SelectProgramBOImpl implements SelectProgramBO {
         }
         return false;
     }
-
-    @Override
-    public List<Object[]> getProgramDetails() {
-        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
-        return selectProgramDAO.loadProgramDetails(session);
-    }
-
     @Override
     public boolean updateProgramDetail(String patient, String program, String clickedPatientID, String clickedProgramID) {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
@@ -61,4 +54,32 @@ public class SelectProgramBOImpl implements SelectProgramBO {
         }
         return false;
     }
+    @Override
+    public boolean deleteProgramDetail(String patient, String program) {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        Transaction tx = session.beginTransaction();
+        try {
+            boolean isDelete = selectProgramDAO.deleteProgramDetail(patient, program, session);
+            if (isDelete) {
+                tx.commit();
+                return true;
+            }
+        }catch (Exception e) {
+            tx.rollback();
+            e.getMessage();
+            new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK).show();
+            return false;
+        }finally {
+            session.close();
+        }
+        return false;
+    }
+
+
+    @Override
+    public List<Object[]> getProgramDetails() {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        return selectProgramDAO.loadProgramDetails(session);
+    }
+
 }

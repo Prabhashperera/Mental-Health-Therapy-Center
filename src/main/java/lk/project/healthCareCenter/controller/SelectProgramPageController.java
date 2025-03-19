@@ -58,6 +58,8 @@ public class SelectProgramPageController implements Initializable {
         loadProgramDetailsTable();
     }
 
+
+
     @FXML
     void saveOnClick(ActionEvent event) {
         String patient = patientID.getText();
@@ -90,8 +92,21 @@ public class SelectProgramPageController implements Initializable {
     }
     @FXML
     void deleteOnClick(ActionEvent event) {
-
+        String patient = patientID.getText();
+        String program = programID.getText();
+        if(!patient.equals("Show Patients") && !program.equals("Show Programs")) {
+            boolean isDeleted = selectProgramBO.deleteProgramDetail(patient, program);
+            if(isDeleted) {
+                refreshPage();
+                new Alert(Alert.AlertType.INFORMATION, "Program Details Deleted", ButtonType.OK).show();
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Program Details Not Deleted", ButtonType.OK).show();
+            }
+        }
     }
+
+
+
 
     @FXML
     private void showPatientsOnClick(ActionEvent actionEvent) throws IOException {
@@ -108,7 +123,6 @@ public class SelectProgramPageController implements Initializable {
     public void setPatientID(Patient selectedPatient) {
         patientID.setText(selectedPatient.getPatientID());
     }
-
     public void setProgramID(String selectedProgram) {
         programID.setText(selectedProgram);
     }

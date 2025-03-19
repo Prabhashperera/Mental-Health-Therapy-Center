@@ -6,4 +6,5 @@ public interface SelectProgramBO {
     boolean saveProgramDetails(String patientID , String programID);
     List<Object[]> getProgramDetails();
     boolean updateProgramDetail(String patient, String program, String clickedPatientID, String clickedProgramID);
+    boolean deleteProgramDetail(String patient, String program);
 }
