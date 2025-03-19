@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class SelectProgramPageController implements Initializable {
-    private String clickedPatientID;
-    private String clickedProgramID;
+    private String oldPatientID;
+    private String oldPorgramID;
     @FXML
     private Button saveBtn;
     @FXML
@@ -79,7 +79,7 @@ public class SelectProgramPageController implements Initializable {
         String patient = patientID.getText();
         String program = programID.getText();
         if(!patient.equals("Show Patients") && !program.equals("Show Programs")) {
-            boolean isUpdated = selectProgramBO.updateProgramDetail(patient, program, clickedPatientID, clickedProgramID);
+            boolean isUpdated = selectProgramBO.updateProgramDetail(patient, program, oldPatientID, oldPorgramID);
             if(isUpdated) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Program Details Updated", ButtonType.OK).show();
@@ -145,16 +145,19 @@ public class SelectProgramPageController implements Initializable {
         loadProgramDetailsTable();
         programID.setText("Show Programs");
         patientID.setText("Show Patients");
+        saveBtn.setDisable(false);
     }
 
     @FXML
     private void onTableClicked(MouseEvent mouseEvent) {
         ProgramDetailsDTO selectedItem = programDetailsTable.getSelectionModel().getSelectedItem();
+        //Clicked Item Stored Globally
+        oldPatientID = selectedItem.getPatientID();
+        oldPorgramID = selectedItem.getProgramID();
+
         patientID.setText(selectedItem.getPatientID());
         programID.setText(selectedItem.getProgramID());
-        //Clicked Item Stored Globally
-        clickedPatientID = selectedItem.getPatientID();
-        clickedProgramID = selectedItem.getProgramID();
+
         saveBtn.setDisable(true);
     }
 }

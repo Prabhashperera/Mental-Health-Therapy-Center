@@ -46,8 +46,8 @@ public class SelectProgramBOImpl implements SelectProgramBO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction tx = session.beginTransaction();
         try {
-            boolean isUPdated = selectProgramDAO.updateProgram(patient, program, clickedPatientID, clickedProgramID, session);
-            if (isUPdated) {
+            boolean isUpdated = selectProgramDAO.updateProgram(patient, program, clickedPatientID, clickedProgramID, session);
+            if (isUpdated) {
                 tx.commit();
                 return true;
             }
