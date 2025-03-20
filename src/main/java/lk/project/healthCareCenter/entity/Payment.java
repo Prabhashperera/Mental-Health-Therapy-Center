@@ -14,7 +14,7 @@ public class Payment {
     @Id
     String paymentID;
     String paymentDate;
-    String PaymentAmount;
+    int PaymentAmount;
 
     @ManyToOne
     @JoinColumn (name = "patientID")

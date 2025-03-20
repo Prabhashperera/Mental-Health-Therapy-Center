@@ -1,7 +1,5 @@
 package lk.project.healthCareCenter.controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,18 +7,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.RegisterPageBO;
 import lk.project.healthCareCenter.bo.impl.RegisterPageBOImpl;
+import lk.project.healthCareCenter.controller.pupups.ShowPatientTableController;
 import lk.project.healthCareCenter.entity.Patient;
-import lk.project.healthCareCenter.entity.TherapyProgram;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class RegisterPageController implements Initializable {

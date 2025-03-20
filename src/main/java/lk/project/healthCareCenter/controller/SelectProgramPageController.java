@@ -14,6 +14,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SelectProgramBO;
 import lk.project.healthCareCenter.bo.impl.SelectProgramBOImpl;
+import lk.project.healthCareCenter.controller.pupups.ShowPatientTableController;
+import lk.project.healthCareCenter.controller.pupups.ShowProgramTableController;
 import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
 import lk.project.healthCareCenter.entity.Patient;
 

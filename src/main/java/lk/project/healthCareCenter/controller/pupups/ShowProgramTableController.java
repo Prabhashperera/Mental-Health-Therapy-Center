@@ -1,4 +1,4 @@
-package lk.project.healthCareCenter.controller;
+package lk.project.healthCareCenter.controller.pupups;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +12,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.RegisterPageBO;
 import lk.project.healthCareCenter.bo.impl.RegisterPageBOImpl;
+import lk.project.healthCareCenter.controller.SelectProgramPageController;
+import lk.project.healthCareCenter.controller.TherapistManageController;
 import lk.project.healthCareCenter.entity.TherapyProgram;
 
 import java.net.URL;
@@ -21,6 +23,7 @@ import java.util.ResourceBundle;
 
 public class ShowProgramTableController implements Initializable {
     private SelectProgramPageController selectProgramPageController;
+    private TherapistManageController therapistManageController;
 
     @FXML
     private TableColumn<TherapyProgram, String> programID;
@@ -58,17 +61,24 @@ public class ShowProgramTableController implements Initializable {
     @FXML
     private void selectOnClick(ActionEvent actionEvent) {
         TherapyProgram selectedItem = programTable.getSelectionModel().getSelectedItem();
-        selectProgramPageController.setProgramID(selectedItem.getProgramID());
-        if (selectedItem != null) {
-//            registerPageController.setSelectedProgram(selectedItem);
-            // Retrieve the stage from the event source (e.g., the button)
+        if (therapistManageController != null) {
+            therapistManageController.setSelectedProgram(selectedItem);
+            //Closing The Stage
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.close();
+            return;
         }
+        selectProgramPageController.setProgramID(selectedItem.getProgramID());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     public void setSelectProgramController(SelectProgramPageController selectProgramPageController) {
         this.selectProgramPageController = selectProgramPageController;
+    }
+
+    public void setTherapistMangeController(TherapistManageController therapistManageController) {
+        this.therapistManageController = therapistManageController;
     }
 
 }

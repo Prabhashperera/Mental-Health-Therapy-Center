@@ -26,4 +26,9 @@ public class Therapist {
     @OneToMany (mappedBy = "therapist" , cascade = CascadeType.ALL)
     private List<TherapySession> therapySessions = new ArrayList<>();
 
+    public Therapist(String id, String name, TherapyProgram program) {
+        therapistID = id;
+        therapistName = name;
+        therapyProgram = program;
+    }
 }

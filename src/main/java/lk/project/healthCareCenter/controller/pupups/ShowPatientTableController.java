@@ -1,4 +1,4 @@
-package lk.project.healthCareCenter.controller;
+package lk.project.healthCareCenter.controller.pupups;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +14,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.RegisterPageBO;
 import lk.project.healthCareCenter.bo.impl.RegisterPageBOImpl;
+import lk.project.healthCareCenter.controller.RegisterPageController;
+import lk.project.healthCareCenter.controller.SelectProgramPageController;
 import lk.project.healthCareCenter.entity.Patient;
 
 import java.net.URL;
