@@ -25,8 +25,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class SelectProgramPageController implements Initializable {
+    public Button updateBtn;
+    public Button deleteBtn;
     private String oldPatientID;
     private String oldPorgramID;
+
+    private String userRole = HomePageController.userRole;
+
     @FXML
     private Button saveBtn;
     @FXML
@@ -57,7 +62,7 @@ public class SelectProgramPageController implements Initializable {
         ProgramName.setCellValueFactory(new PropertyValueFactory<>("programName"));
         ProgramID.setCellValueFactory(new PropertyValueFactory<>("programID"));
 
-        loadProgramDetailsTable();
+        refreshPage();
     }
 
 
@@ -162,6 +167,11 @@ public class SelectProgramPageController implements Initializable {
         programID.setText("Show Programs");
         patientID.setText("Show Patients");
         saveBtn.setDisable(false);
+        if (userRole == "Admin") {
+            saveBtn.setDisable(true);
+            updateBtn.setDisable(true);
+            deleteBtn.setDisable(true);
+        }
     }
 
     @FXML

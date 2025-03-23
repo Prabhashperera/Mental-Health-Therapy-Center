@@ -20,8 +20,8 @@
          </font>
       </Label>
       <Button fx:id="saveBtn" layoutX="216.0" layoutY="204.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
-      <Button layoutX="338.0" layoutY="204.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
-      <Button layoutX="461.0" layoutY="204.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
+      <Button fx:id="updateBtn" layoutX="338.0" layoutY="204.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
+      <Button fx:id="deleteBtn" layoutX="461.0" layoutY="204.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
       <Button fx:id="patientID" layoutX="257.0" layoutY="85.0" mnemonicParsing="false" onAction="#showPatientsOnClick" prefHeight="34.0" prefWidth="305.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Patients" />
       <Button fx:id="programID" layoutX="257.0" layoutY="130.0" mnemonicParsing="false" onAction="#showProgramsOnClick" prefHeight="34.0" prefWidth="305.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Programs" />
       <TableView fx:id="programDetailsTable" layoutX="33.0" layoutY="281.0" onMouseClicked="#onTableClicked" prefHeight="200.0" prefWidth="658.0">
