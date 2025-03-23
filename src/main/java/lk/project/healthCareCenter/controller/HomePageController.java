@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable {
     private LoginPageController loginPageController;
-    private String userRole = null;
+    public static String userRole = null;
     @FXML
     private AnchorPane middlePane;
 

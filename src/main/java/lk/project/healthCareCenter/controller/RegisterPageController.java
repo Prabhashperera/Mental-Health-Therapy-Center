@@ -19,6 +19,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class RegisterPageController implements Initializable {
+    public Button saveBtn;
+    public Button updateBtn;
+    public Button deleteBtn;
     @FXML
     private TextField ageLabel;
     @FXML
@@ -29,6 +32,9 @@ public class RegisterPageController implements Initializable {
     private TextArea noteLabel;
     @FXML
     private TextField numberLabel;
+
+    private final String userRole = HomePageController.userRole;
+
 
     private RegisterPageBO registerPageBO = new RegisterPageBOImpl();
 
@@ -138,6 +144,11 @@ public class RegisterPageController implements Initializable {
 
     //External Methods
     public void refreshPage() throws SQLException {
+        if (userRole == "Admin") {
+            saveBtn.setDisable(true);
+            updateBtn.setDisable(true);
+            deleteBtn.setDisable(true);
+        }
         idLabel.setText("");
         nameLabel.setText("");
         ageLabel.setText("");

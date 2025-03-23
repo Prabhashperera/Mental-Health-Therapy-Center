@@ -83,6 +83,6 @@ public class LoginPageController {
     }
 
     public void userOptionOnClick(ActionEvent actionEvent) {
-        menuButton.setText("User");
+        menuButton.setText("Receptionist");
     }
 }

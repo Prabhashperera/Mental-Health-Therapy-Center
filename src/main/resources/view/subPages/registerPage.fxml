@@ -43,9 +43,9 @@
       <TextArea fx:id="noteLabel" layoutX="245.0" layoutY="236.0" prefHeight="81.0" prefWidth="324.0" promptText="Note ...." style="-fx-background-color: transparent; -fx-border-color: blue;" />
       <TextField fx:id="ageLabel" layoutX="245.0" layoutY="150.0" prefHeight="26.0" prefWidth="324.0" promptText="32" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;" />
       <TextField fx:id="numberLabel" layoutX="245.0" layoutY="189.0" prefHeight="26.0" prefWidth="324.0" promptText="+94 704570039" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;" />
-      <Button layoutX="115.0" layoutY="372.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
-      <Button layoutX="237.0" layoutY="372.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
-      <Button layoutX="360.0" layoutY="372.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
+      <Button fx:id="saveBtn" layoutX="115.0" layoutY="372.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
+      <Button fx:id="updateBtn" layoutX="237.0" layoutY="372.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
+      <Button fx:id="deleteBtn" layoutX="360.0" layoutY="372.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
       <Button layoutX="483.0" layoutY="372.0" mnemonicParsing="false" onAction="#showTableOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Patients" />
    </children>
 </AnchorPane>

@@ -31,7 +31,7 @@
       <MenuButton fx:id="menuButton" layoutX="267.0" layoutY="203.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: brown; -fx-font-weight: bold;" text="Select Role" textFill="WHITE">
         <items>
           <MenuItem fx:id="adminOption" mnemonicParsing="false" onAction="#adminOptionOnClick" text="Admin" />
-          <MenuItem fx:id="userOption" mnemonicParsing="false" onAction="#userOptionOnClick" text="User" />
+          <MenuItem fx:id="userOption" mnemonicParsing="false" onAction="#userOptionOnClick" text="Receptionist" />
         </items>
          <font>
             <Font size="13.0" />
