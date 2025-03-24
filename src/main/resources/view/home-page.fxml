@@ -9,11 +9,12 @@
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="262.0" style="-fx-background-color: darkblue;">
          <children>
-            <Button layoutX="40.0" layoutY="93.0" mnemonicParsing="false" onAction="#registerOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Register Patient" />
-            <Button layoutX="40.0" layoutY="152.0" mnemonicParsing="false" onAction="#programOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Select Program" />
-            <Button layoutX="40.0" layoutY="214.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Payment" />
-            <Button layoutX="40.0" layoutY="373.0" mnemonicParsing="false" onAction="#therapistManageOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Therapist Manage" />
-            <Button layoutX="40.0" layoutY="430.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Manage" />
+            <Button layoutX="40.0" layoutY="37.0" mnemonicParsing="false" onAction="#registerOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Register Patient" />
+            <Button layoutX="40.0" layoutY="88.0" mnemonicParsing="false" onAction="#programOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Select Program" />
+            <Button layoutX="40.0" layoutY="139.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Payment" />
+            <Button layoutX="40.0" layoutY="470.0" mnemonicParsing="false" onAction="#therapistManageOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Therapist Manage" />
+            <Button layoutX="40.0" layoutY="521.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Manage" />
+            <Button layoutX="40.0" layoutY="232.0" mnemonicParsing="false" onAction="#sessionBookingOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Booking" />
          </children>
       </AnchorPane>
       <Text layoutX="506.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Therapy Center" wrappingWidth="222.40000000000003">

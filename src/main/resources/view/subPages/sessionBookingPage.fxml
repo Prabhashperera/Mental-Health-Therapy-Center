@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="530.0" prefWidth="719.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.SessionBookingController">
+   <children>
+      <Label layoutX="133.0" layoutY="82.0" prefHeight="19.0" prefWidth="100.0" text="Session ID       :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="117.0" text="Booking Date  :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="sessionIDLabel" layoutX="250.0" layoutY="82.0" text="100">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="239.0" prefHeight="19.0" prefWidth="94.0" text="Booking Time  :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="159.0" text="Patient ID        :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="132.0" layoutY="201.0" text="Therapist ID     :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="saveBtn" layoutX="115.0" layoutY="372.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
+      <Button fx:id="updateBtn" layoutX="237.0" layoutY="372.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
+      <Button fx:id="deleteBtn" layoutX="360.0" layoutY="372.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
+      <Button layoutX="483.0" layoutY="372.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />
+      <DatePicker fx:id="dateLabel" layoutX="245.0" layoutY="114.0" prefHeight="26.0" prefWidth="324.0" />
+      <MenuButton fx:id="timeMenuBtn" layoutX="245.0" layoutY="236.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="324.0" text="Select Booking Time">
+        <items>
+          <MenuItem mnemonicParsing="false" text="1:30" />
+          <MenuItem mnemonicParsing="false" text="2:30" />
+            <MenuItem mnemonicParsing="false" text="2:30" />
+            <MenuItem mnemonicParsing="false" text="3:30" />
+            <MenuItem mnemonicParsing="false" text="4:30" />
+            <MenuItem mnemonicParsing="false" text="5:30" />
+            <MenuItem mnemonicParsing="false" text="6:30" />
+        </items>
+      </MenuButton>
+      <Button fx:id="patientIDBtn" layoutX="245.0" layoutY="157.0" mnemonicParsing="false" onAction="#showPatientTableOnClick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
+      <Button fx:id="TherapistIDLabel" layoutX="244.0" layoutY="196.0" mnemonicParsing="false" onAction="#showTherapistTableOnClick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
+      <Text fx:id="patientProgramIDLabel" layoutX="367.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient - Program" />
+   </children>
+</AnchorPane>

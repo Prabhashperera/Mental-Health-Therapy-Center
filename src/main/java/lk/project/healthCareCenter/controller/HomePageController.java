@@ -42,7 +42,7 @@ public class HomePageController implements Initializable {
     @FXML
     private void therapistManageOnClick(ActionEvent actionEvent) throws IOException {
         middlePane.getChildren().clear();
-        AnchorPane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/subPages/therapistManage.fxml")));
+        AnchorPane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/subPages/therapistManagePage.fxml")));
         middlePane.getChildren().add(pane);
     }
 
@@ -50,5 +50,12 @@ public class HomePageController implements Initializable {
         this.loginPageController = loginPageController;
         userRole = loginPageController.getRole();
         System.out.println("Welcome : " + userRole);
+    }
+
+    @FXML
+    private void sessionBookingOnClick(ActionEvent actionEvent) throws IOException {
+        middlePane.getChildren().clear();
+        AnchorPane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/subPages/sessionBookingPage.fxml")));
+        middlePane.getChildren().add(pane);
     }
 }
