@@ -3,8 +3,11 @@ package lk.project.healthCareCenter.bo.impl;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dao.impl.SessionBookingDAOImpl;
+import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
 import lk.project.healthCareCenter.hibernateConfig.FactoryConfiguration;
 import org.hibernate.Session;
+
+import java.util.ArrayList;
 
 public class SessionBookingBOImpl implements SessionBookingBO{
     private final SessionBookingDAO sessionBookingDAO = new SessionBookingDAOImpl();
@@ -24,5 +27,11 @@ public class SessionBookingBOImpl implements SessionBookingBO{
         }finally {
             session.close();
         }
+    }
+
+    @Override
+    public ArrayList<ProgramDetailsDTO> loadPatientTable() {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        return sessionBookingDAO.loadPatientTable(session);
     }
 }

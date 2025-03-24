@@ -2,13 +2,19 @@ package lk.project.healthCareCenter.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
+import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetailsController;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -31,7 +37,15 @@ public class SessionBookingController implements Initializable {
 
     //POPUPS METHODS
     @FXML
-    private void showPatientTableOnClick(ActionEvent actionEvent) {
+    private void showPatientTableOnClick(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/bookingPagePopups/showAllPatientDetails.fxml"));
+        Parent root = fxmlLoader.load();
+        ShowAllPatientDetailsController controller = fxmlLoader.getController();
+        controller.setSessionBookingController(this);
+        stage.setScene(new Scene(root));
+        stage.setTitle("Patient Table");
+        stage.show();
     }
 
     @FXML
@@ -41,7 +55,6 @@ public class SessionBookingController implements Initializable {
     @FXML
     private void showBookingsTableOnClick(ActionEvent actionEvent) {
     }
-
 
 
 
@@ -58,6 +71,7 @@ public class SessionBookingController implements Initializable {
     @FXML
     private void saveOnClick(ActionEvent actionEvent) {
     }
+
 
     //Helper Methods
     public void refreshPage() {
