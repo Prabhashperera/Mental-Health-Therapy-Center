@@ -6,19 +6,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetailsController;
+import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SessionBookingController implements Initializable {
+    @FXML
+    private Button patientIDBtn;
+    @FXML
+    private Button TherapistIDLabel;
+    @FXML
+    private Text patientProgramIDLabel;
     @FXML
     private DatePicker dateLabel;
     @FXML
@@ -80,6 +89,12 @@ public class SessionBookingController implements Initializable {
 
     public String getNextSessionID() {
         return sessionBookingBO.generateNextSessionID();
+    }
+
+    //Field Setter Methods
+    public void setPatientBtnAndLabel(ProgramDetailsDTO selectedItem) {
+        patientIDBtn.setText(selectedItem.getPatientID());
+        patientProgramIDLabel.setText(selectedItem.getProgramID());
     }
 
 }

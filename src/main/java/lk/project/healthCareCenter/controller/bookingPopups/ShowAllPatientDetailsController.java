@@ -51,6 +51,10 @@ public class ShowAllPatientDetailsController implements Initializable {
 
     @FXML
     private void selectOnClick(ActionEvent actionEvent) {
+        ProgramDetailsDTO selectedItem = patientTable.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            sessionBookingController.setPatientBtnAndLabel(selectedItem);
+        }
     }
 
     //Controller Setter
