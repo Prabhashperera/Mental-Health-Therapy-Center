@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
@@ -17,12 +14,15 @@ import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetailsController;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllTherapistDetailsController;
 import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
+import lk.project.healthCareCenter.dto.TherapistDetailsDTO;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SessionBookingController implements Initializable {
+    @FXML
+    private Text therapistNameLabel;
     @FXML
     private Button patientIDBtn;
     @FXML
@@ -31,8 +31,23 @@ public class SessionBookingController implements Initializable {
     private Text patientProgramIDLabel;
     @FXML
     private DatePicker dateLabel;
+//    Menu Button
     @FXML
     private MenuButton timeMenuBtn;
+    @FXML
+    private MenuItem oneThirty;
+    @FXML
+    private MenuItem twoThirty;
+    @FXML
+    private MenuItem threeThirty;
+    @FXML
+    private MenuItem fourThirty;
+    @FXML
+    private MenuItem fiveThirty;
+    @FXML
+    private MenuItem sixThirty;
+//    Menu Button End
+
     @FXML
     private Label sessionIDLabel;
 
@@ -41,6 +56,11 @@ public class SessionBookingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // set onAction for MenuItems
+        for (MenuItem item : timeMenuBtn.getItems()) {
+            item.setOnAction(this::menuBtnOnClick);
+        }
+        checkRequiredHeirarchy();
         refreshPage();
     }
 
@@ -95,6 +115,25 @@ public class SessionBookingController implements Initializable {
     //Helper Methods
     public void refreshPage() {
         sessionIDLabel.setText(getNextSessionID());
+        checkRequiredHeirarchy();
+    }
+
+    public void checkRequiredHeirarchy() {
+        if (timeMenuBtn.getText().equals("Select Booking Time")) {
+            patientIDBtn.setDisable(true);
+            TherapistIDLabel.setDisable(true);
+        }else if (!patientIDBtn.getText().equals("Select Booking Time")) {
+            patientIDBtn.setDisable(false);
+            if (patientIDBtn.getText().equals("Select")) {
+                TherapistIDLabel.setDisable(true);
+            }else {
+                TherapistIDLabel.setDisable(false);
+            }
+        }else {
+            patientIDBtn.setDisable(false);
+            TherapistIDLabel.setDisable(false);
+        }
+        System.out.println("called");
     }
 
     public String getNextSessionID() {
@@ -105,6 +144,18 @@ public class SessionBookingController implements Initializable {
     public void setPatientBtnAndLabel(ProgramDetailsDTO selectedItem) {
         patientIDBtn.setText(selectedItem.getPatientID());
         patientProgramIDLabel.setText(selectedItem.getProgramID());
+        checkRequiredHeirarchy();
     }
 
+    public void setTherapistBtnDetails(TherapistDetailsDTO selectedItem) {
+        TherapistIDLabel.setText(selectedItem.getTherapistID());
+        therapistNameLabel.setText(selectedItem.getTherapistName());
+    }
+
+    @FXML
+    private void menuBtnOnClick(ActionEvent actionEvent) {
+        MenuItem menuItem = (MenuItem) actionEvent.getSource();
+        timeMenuBtn.setText(menuItem.getText());
+        checkRequiredHeirarchy();
+    }
 }

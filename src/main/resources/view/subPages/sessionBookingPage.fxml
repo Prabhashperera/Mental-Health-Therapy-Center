@@ -46,19 +46,16 @@
       <Button fx:id="deleteBtn" layoutX="366.0" layoutY="374.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
       <Button layoutX="489.0" layoutY="374.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />
       <DatePicker fx:id="dateLabel" layoutX="245.0" layoutY="114.0" prefHeight="26.0" prefWidth="324.0" />
-      <MenuButton fx:id="timeMenuBtn" layoutX="245.0" layoutY="156.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="324.0" text="Select Booking Time">
-        <items>
-          <MenuItem mnemonicParsing="false" text="1:30" />
-          <MenuItem mnemonicParsing="false" text="2:30" />
+      <MenuButton fx:id="timeMenuBtn" layoutX="245.0" layoutY="156.0" mnemonicParsing="false" onAction="#menuBtnOnClick" prefHeight="26.0" prefWidth="324.0" text="Select Booking Time">
+         <items>
+            <MenuItem mnemonicParsing="false" text="1:30" />
             <MenuItem mnemonicParsing="false" text="2:30" />
             <MenuItem mnemonicParsing="false" text="3:30" />
             <MenuItem mnemonicParsing="false" text="4:30" />
-            <MenuItem mnemonicParsing="false" text="5:30" />
-            <MenuItem mnemonicParsing="false" text="6:30" />
-        </items>
-      </MenuButton>
+         </items></MenuButton>
       <Button fx:id="patientIDBtn" layoutX="245.0" layoutY="195.0" mnemonicParsing="false" onAction="#showPatientTableOnClick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
       <Button fx:id="TherapistIDLabel" layoutX="244.0" layoutY="234.0" mnemonicParsing="false" onAction="#showTherapistTableOnClick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
       <Text fx:id="patientProgramIDLabel" layoutX="367.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient - Program" />
+      <Text fx:id="therapistNameLabel" layoutX="368.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Therapist - Name" />
    </children>
 </AnchorPane>

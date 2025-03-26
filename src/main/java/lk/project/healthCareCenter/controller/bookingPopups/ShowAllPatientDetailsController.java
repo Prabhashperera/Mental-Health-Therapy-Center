@@ -6,9 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.SessionBookingController;
@@ -54,6 +56,10 @@ public class ShowAllPatientDetailsController implements Initializable {
         ProgramDetailsDTO selectedItem = patientTable.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             sessionBookingController.setPatientBtnAndLabel(selectedItem);
+            // Retrieve the stage from the event source (e.g., the button)
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            // Close the stage
+            stage.close();
         }
     }
 
