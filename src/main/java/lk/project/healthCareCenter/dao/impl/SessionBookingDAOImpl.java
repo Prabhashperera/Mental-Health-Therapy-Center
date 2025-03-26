@@ -2,6 +2,8 @@ package lk.project.healthCareCenter.dao.impl;
 
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
+import lk.project.healthCareCenter.dto.TherapistDetailsDTO;
+import lk.project.healthCareCenter.entity.Therapist;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -54,6 +56,33 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
                     (String) row[1],  // patientName
                     (String) row[2],  // programID
                     (String) row[3]   // programName
+            ));
+        }
+
+        return dtoList;
+    }
+
+    @Override
+    public ArrayList<TherapistDetailsDTO> loadTherapistTable(Session session) {
+
+        String hql = "SELECT t.therapistID, t.therapistName, tp.programID, tp.programName " +
+                "FROM Therapist t " +
+                "JOIN t.therapyProgram tp";
+
+        // Create the query using the HQL string
+        Query<Object[]> query = session.createQuery(hql);
+
+        // Execute the query and retrieve the results
+        List<Object[]> resultList = query.list();
+
+        // 🔥 Convert the raw Object[] into ProgramDetailsDTO objects
+        ArrayList<TherapistDetailsDTO> dtoList = new ArrayList<>();
+        for (Object[] row : resultList) {
+            dtoList.add(new TherapistDetailsDTO(
+                    (String) row[0],
+                    (String) row[1],
+                    (String) row[2],
+                    (String) row[3]
             ));
         }
 

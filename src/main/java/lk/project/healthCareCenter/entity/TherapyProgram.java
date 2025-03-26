@@ -17,11 +17,14 @@ import java.util.List;
 @Entity
 public class TherapyProgram {
     @Id
-    @Column(nullable = false, unique = true)
     private String programID;
     private String programName;
     private String programDuration;
     private String programFee;
+
+
+    @OneToOne(mappedBy = "therapyProgram", cascade = CascadeType.ALL)
+    private Therapist therapist;
 
     @OneToMany (mappedBy = "therapyProgram" , cascade = CascadeType.ALL)
     private List<ProgramDetails> programDetails = new ArrayList<>();

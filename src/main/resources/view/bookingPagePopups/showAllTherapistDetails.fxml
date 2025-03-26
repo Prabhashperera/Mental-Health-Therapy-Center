@@ -14,7 +14,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="patientTable" layoutX="33.0" layoutY="58.0" prefHeight="250.0" prefWidth="606.0">
+      <TableView fx:id="therapistTable" layoutX="33.0" layoutY="58.0" prefHeight="250.0" prefWidth="606.0">
         <columns>
             <TableColumn fx:id="therapistID" prefWidth="79.20001602172852" text="Therapist ID" />
             <TableColumn fx:id="therapistName" prefWidth="237.6000213623047" text="Therapist Name" />

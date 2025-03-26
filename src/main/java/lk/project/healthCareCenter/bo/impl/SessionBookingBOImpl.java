@@ -4,6 +4,7 @@ import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dao.impl.SessionBookingDAOImpl;
 import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
+import lk.project.healthCareCenter.dto.TherapistDetailsDTO;
 import lk.project.healthCareCenter.hibernateConfig.FactoryConfiguration;
 import org.hibernate.Session;
 
@@ -33,5 +34,11 @@ public class SessionBookingBOImpl implements SessionBookingBO{
     public ArrayList<ProgramDetailsDTO> loadPatientTable() {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         return sessionBookingDAO.loadPatientTable(session);
+    }
+
+    @Override
+    public ArrayList<TherapistDetailsDTO> loadTherapistTable() {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        return sessionBookingDAO.loadTherapistTable(session);
     }
 }

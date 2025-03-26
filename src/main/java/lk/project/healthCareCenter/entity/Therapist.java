@@ -19,7 +19,7 @@ public class Therapist {
     private String therapistID;
     private String therapistName;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "programID")
     private TherapyProgram therapyProgram;
 
