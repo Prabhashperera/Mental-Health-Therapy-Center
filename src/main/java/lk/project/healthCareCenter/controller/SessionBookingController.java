@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetailsController;
+import lk.project.healthCareCenter.controller.bookingPopups.ShowAllTherapistDetailsController;
 import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
 
 import java.io.IOException;
@@ -58,7 +59,16 @@ public class SessionBookingController implements Initializable {
     }
 
     @FXML
-    private void showTherapistTableOnClick(ActionEvent actionEvent) {
+    private void showTherapistTableOnClick(ActionEvent actionEvent) throws IOException {
+
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/bookingPagePopups/showAllTherapistDetails.fxml"));
+        Parent root = fxmlLoader.load();
+        ShowAllTherapistDetailsController controller = fxmlLoader.getController();
+        controller.setSessionBookingController(this);
+        stage.setScene(new Scene(root));
+        stage.setTitle("Therapist Table");
+        stage.show();
     }
 
     @FXML

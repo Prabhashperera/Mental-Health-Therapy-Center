@@ -2,6 +2,7 @@ package lk.project.healthCareCenter.entity;
 
 
 import jakarta.persistence.*;
+import lk.project.healthCareCenter.dto.TherapistDetailsDTO;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -24,4 +25,7 @@ public class TherapyProgram {
 
     @OneToMany (mappedBy = "therapyProgram" , cascade = CascadeType.ALL)
     private List<ProgramDetails> programDetails = new ArrayList<>();
+
+    @OneToMany (mappedBy = "therapyProgram" , cascade = CascadeType.ALL)
+    private List<Payment> payments = new ArrayList<>();
 }

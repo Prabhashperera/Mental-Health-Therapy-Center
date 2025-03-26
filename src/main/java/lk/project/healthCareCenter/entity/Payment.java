@@ -12,12 +12,16 @@ import lombok.*;
 @Entity
 public class Payment {
     @Id
-    String paymentID;
-    String paymentDate;
-    int PaymentAmount;
+    private String paymentID;
+    private String paymentDate;
+    private int paymentAmount;
 
     @ManyToOne
     @JoinColumn (name = "patientID")
     private Patient patient;
+
+    @ManyToOne
+    @JoinColumn (name = "programID")
+    private TherapyProgram therapyProgram;
 
 }
