@@ -10,9 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 
-@Entity
 public class User {
-    @Id
     private String userName;
     private String password;
     private String userRole;
