@@ -1,9 +1,8 @@
 package lk.project.healthCareCenter.dao.impl;
 
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
-import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
-import lk.project.healthCareCenter.dto.TherapistDetailsDTO;
-import lk.project.healthCareCenter.entity.Therapist;
+import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
+import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -36,7 +35,7 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
     }
 
     @Override
-    public ArrayList<ProgramDetailsDTO> loadPatientTable(Session session) {
+    public ArrayList<CustomProgramDetailsDTO> loadPatientTable(Session session) {
         String hql = "SELECT p.patientID, p.patientName, tp.programID, tp.programName " +
                 "FROM Patient p " +
                 "JOIN p.programDetails pd " +
@@ -49,9 +48,9 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
         List<Object[]> resultList = query.list();
 
         // 🔥 Convert the raw Object[] into ProgramDetailsDTO objects
-        ArrayList<ProgramDetailsDTO> dtoList = new ArrayList<>();
+        ArrayList<CustomProgramDetailsDTO> dtoList = new ArrayList<>();
         for (Object[] row : resultList) {
-            dtoList.add(new ProgramDetailsDTO(
+            dtoList.add(new CustomProgramDetailsDTO(
                     (String) row[0],  // patientID
                     (String) row[1],  // patientName
                     (String) row[2],  // programID
@@ -63,7 +62,7 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
     }
 
     @Override
-    public ArrayList<TherapistDetailsDTO> loadTherapistTable(Session session) {
+    public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(Session session) {
 
         String hql = "SELECT t.therapistID, t.therapistName, tp.programID, tp.programName " +
                 "FROM Therapist t " +
@@ -76,9 +75,9 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
         List<Object[]> resultList = query.list();
 
         // 🔥 Convert the raw Object[] into ProgramDetailsDTO objects
-        ArrayList<TherapistDetailsDTO> dtoList = new ArrayList<>();
+        ArrayList<CustomTherapistDetailsDTO> dtoList = new ArrayList<>();
         for (Object[] row : resultList) {
-            dtoList.add(new TherapistDetailsDTO(
+            dtoList.add(new CustomTherapistDetailsDTO(
                     (String) row[0],
                     (String) row[1],
                     (String) row[2],

@@ -11,7 +11,6 @@ import lk.project.healthCareCenter.bo.LoginPageBO;
 import lk.project.healthCareCenter.bo.impl.LoginPageBOImpl;
 import lk.project.healthCareCenter.controller.pupups.ShowPatientTableController;
 import lk.project.healthCareCenter.entity.User;
-
 import java.io.IOException;
 
 public class LoginPageController {
@@ -76,7 +75,6 @@ public class LoginPageController {
         }
         return null;
     }
-
 
     public void adminOptionOnClick(ActionEvent actionEvent) {
         menuButton.setText("Admin");

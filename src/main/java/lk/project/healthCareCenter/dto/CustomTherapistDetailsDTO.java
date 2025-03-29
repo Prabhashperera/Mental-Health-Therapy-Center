@@ -1,6 +1,5 @@
 package lk.project.healthCareCenter.dto;
 
-import lk.project.healthCareCenter.entity.Therapist;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class TherapistDetailsDTO {
+public class CustomTherapistDetailsDTO {
     private String therapistID;
     private String therapistName;
     private String programID;

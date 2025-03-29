@@ -13,9 +13,7 @@ import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.SessionBookingController;
-import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
-import lk.project.healthCareCenter.dto.TherapistDetailsDTO;
-import lk.project.healthCareCenter.entity.Therapist;
+import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -23,15 +21,15 @@ import java.util.ResourceBundle;
 
 public class ShowAllTherapistDetailsController implements Initializable {
     @FXML
-    private TableView<TherapistDetailsDTO> therapistTable;
+    private TableView<CustomTherapistDetailsDTO> therapistTable;
     @FXML
-    private TableColumn<TherapistDetailsDTO, String> therapistID;
+    private TableColumn<CustomTherapistDetailsDTO, String> therapistID;
     @FXML
-    private TableColumn<TherapistDetailsDTO, String> therapistName;
+    private TableColumn<CustomTherapistDetailsDTO, String> therapistName;
     @FXML
-    private TableColumn<TherapistDetailsDTO, String> programID;
+    private TableColumn<CustomTherapistDetailsDTO, String> programID;
     @FXML
-    private TableColumn<TherapistDetailsDTO, String> programName;
+    private TableColumn<CustomTherapistDetailsDTO, String> programName;
 
     private SessionBookingController sessionBookingController;
     private final SessionBookingBO sessionBookingBO = new SessionBookingBOImpl();
@@ -48,8 +46,8 @@ public class ShowAllTherapistDetailsController implements Initializable {
 
     //Loader Methods
     private void loadTable() {
-        ArrayList<TherapistDetailsDTO> detailsDTOS = sessionBookingBO.loadTherapistTable();
-        ObservableList<TherapistDetailsDTO> data = FXCollections.observableArrayList(detailsDTOS);
+        ArrayList<CustomTherapistDetailsDTO> detailsDTOS = sessionBookingBO.loadTherapistTable();
+        ObservableList<CustomTherapistDetailsDTO> data = FXCollections.observableArrayList(detailsDTOS);
         therapistTable.setItems(data);
     }
 
@@ -60,7 +58,7 @@ public class ShowAllTherapistDetailsController implements Initializable {
 
 
     public void selectOnClick(ActionEvent actionEvent) {
-        TherapistDetailsDTO selectedItem = therapistTable.getSelectionModel().getSelectedItem();
+        CustomTherapistDetailsDTO selectedItem = therapistTable.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             sessionBookingController.setTherapistBtnDetails(selectedItem);
             // Retrieve the stage from the event source (e.g., the button)

@@ -16,7 +16,7 @@ import lk.project.healthCareCenter.bo.SelectProgramBO;
 import lk.project.healthCareCenter.bo.impl.SelectProgramBOImpl;
 import lk.project.healthCareCenter.controller.pupups.ShowPatientTableController;
 import lk.project.healthCareCenter.controller.pupups.ShowProgramTableController;
-import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
+import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
 import lk.project.healthCareCenter.entity.Patient;
 
 import java.io.IOException;
@@ -35,15 +35,15 @@ public class SelectProgramPageController implements Initializable {
     @FXML
     private Button saveBtn;
     @FXML
-    private TableView<ProgramDetailsDTO> programDetailsTable;
+    private TableView<CustomProgramDetailsDTO> programDetailsTable;
     @FXML
-    private TableColumn<ProgramDetailsDTO, String> PatientID;
+    private TableColumn<CustomProgramDetailsDTO, String> PatientID;
     @FXML
-    private TableColumn<ProgramDetailsDTO, String> ProgramName;
+    private TableColumn<CustomProgramDetailsDTO, String> ProgramName;
     @FXML
-    private TableColumn<ProgramDetailsDTO, String> ProgramID;
+    private TableColumn<CustomProgramDetailsDTO, String> ProgramID;
     @FXML
-    private TableColumn<ProgramDetailsDTO, String> PatientName;
+    private TableColumn<CustomProgramDetailsDTO, String> PatientName;
 
 
     @FXML
@@ -148,7 +148,7 @@ public class SelectProgramPageController implements Initializable {
 
     public void loadProgramDetailsTable() {
         List<Object[]> programDetails = selectProgramBO.getProgramDetails();
-        ObservableList<ProgramDetailsDTO> programDetailsObservableList = FXCollections.observableArrayList();
+        ObservableList<CustomProgramDetailsDTO> programDetailsObservableList = FXCollections.observableArrayList();
 
         for (Object[] detail : programDetails) {
             String patientID = (String) detail[0];
@@ -156,7 +156,7 @@ public class SelectProgramPageController implements Initializable {
             String programID = (String) detail[2];
             String programName = (String) detail[3];
 
-            ProgramDetailsDTO dto = new ProgramDetailsDTO(patientID, patientName, programID, programName);
+            CustomProgramDetailsDTO dto = new CustomProgramDetailsDTO(patientID, patientName, programID, programName);
             programDetailsObservableList.add(dto);
         }
         programDetailsTable.setItems(programDetailsObservableList);
@@ -176,7 +176,7 @@ public class SelectProgramPageController implements Initializable {
 
     @FXML
     private void onTableClicked(MouseEvent mouseEvent) {
-        ProgramDetailsDTO selectedItem = programDetailsTable.getSelectionModel().getSelectedItem();
+        CustomProgramDetailsDTO selectedItem = programDetailsTable.getSelectionModel().getSelectedItem();
         //Clicked Item Stored Globally
         oldPatientID = selectedItem.getPatientID();
         oldPorgramID = selectedItem.getProgramID();

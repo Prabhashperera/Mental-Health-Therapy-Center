@@ -7,13 +7,13 @@ import lombok.*;
 @Getter
 @Data
 
-public class ProgramDetailsDTO {
+public class CustomProgramDetailsDTO {
     private String programID;
     private String programName;
     private String patientID;
     private String patientName;
 
-    public ProgramDetailsDTO(String patientID, String patientName, String programID, String programName) {
+    public CustomProgramDetailsDTO(String patientID, String patientName, String programID, String programName) {
         this.patientID = patientID;
         this.patientName = patientName;
         this.programID = programID;

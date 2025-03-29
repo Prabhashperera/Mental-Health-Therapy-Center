@@ -13,8 +13,8 @@ import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetailsController;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllTherapistDetailsController;
-import lk.project.healthCareCenter.dto.ProgramDetailsDTO;
-import lk.project.healthCareCenter.dto.TherapistDetailsDTO;
+import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
+import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
 
 import java.io.IOException;
 import java.net.URL;
@@ -141,13 +141,13 @@ public class SessionBookingController implements Initializable {
     }
 
     //Field Setter Methods
-    public void setPatientBtnAndLabel(ProgramDetailsDTO selectedItem) {
+    public void setPatientBtnAndLabel(CustomProgramDetailsDTO selectedItem) {
         patientIDBtn.setText(selectedItem.getPatientID());
         patientProgramIDLabel.setText(selectedItem.getProgramID());
         checkRequiredHeirarchy();
     }
 
-    public void setTherapistBtnDetails(TherapistDetailsDTO selectedItem) {
+    public void setTherapistBtnDetails(CustomTherapistDetailsDTO selectedItem) {
         TherapistIDLabel.setText(selectedItem.getTherapistID());
         therapistNameLabel.setText(selectedItem.getTherapistName());
     }

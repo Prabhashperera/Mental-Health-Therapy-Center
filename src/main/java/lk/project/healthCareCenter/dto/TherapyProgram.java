@@ -1,4 +1,4 @@
-package lk.project.healthCareCenter.entity;
+package lk.project.healthCareCenter.dto;
 
 
 import jakarta.persistence.*;
