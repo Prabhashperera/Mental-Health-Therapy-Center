@@ -56,6 +56,7 @@ public class SelectProgramPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Initialize SelectProgramPageController");
         PatientID.setCellValueFactory(new PropertyValueFactory<>("patientID"));
         PatientName.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         ProgramID.setCellValueFactory(new PropertyValueFactory<>("programID"));
@@ -63,6 +64,7 @@ public class SelectProgramPageController implements Initializable {
         ProgramID.setCellValueFactory(new PropertyValueFactory<>("programID"));
 
         refreshPage();
+        System.out.println("Refresh SelectProgramPageController");
     }
 
 
@@ -136,8 +138,10 @@ public class SelectProgramPageController implements Initializable {
 
     @FXML
     private void showProgramsOnClick(ActionEvent actionEvent) throws IOException {
+        System.out.println("showProgramsOnClick");
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/popups/showProgramTable.fxml"));
+        System.out.println("FXML OK");
         Parent root = fxmlLoader.load();
         ShowProgramTableController controller = fxmlLoader.getController();
         controller.setSelectProgramController(this);
