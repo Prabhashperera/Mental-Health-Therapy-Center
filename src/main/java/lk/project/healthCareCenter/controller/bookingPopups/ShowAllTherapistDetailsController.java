@@ -46,7 +46,9 @@ public class ShowAllTherapistDetailsController implements Initializable {
     //Loader Methods
     public void loadTable() {
         String patientProgramID = sessionBookingController.getPatientProgramIDLabel();
-        ArrayList<CustomTherapistDetailsDTO> detailsDTOS = sessionBookingBO.loadTherapistTable(patientProgramID);
+        ArrayList<CustomTherapistDetailsDTO> detailsDTOS = sessionBookingBO.loadTherapistTable(patientProgramID,
+                sessionBookingController.getSelectedDateLabel(), sessionBookingController.getSelectedTimeLabel()
+        );
         ObservableList<CustomTherapistDetailsDTO> data = FXCollections.observableArrayList(detailsDTOS);
         therapistTable.setItems(data);
     }

@@ -9,6 +9,6 @@ import java.util.ArrayList;
 public interface SessionBookingBO {
     String generateNextSessionID();
     ArrayList<CustomProgramDetailsDTO> loadPatientTable();
-    ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(String patientProgramID);
+    ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(String patientProgramID , String selectedDateLabel, String selectedTimeLabel);
     boolean saveSession(TherapySessionDTO sessionDTO);
 }

@@ -3,7 +3,6 @@ package lk.project.healthCareCenter.dao.impl;
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
 import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
-import lk.project.healthCareCenter.dto.TherapySessionDTO;
 import lk.project.healthCareCenter.entity.TherapySession;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -64,11 +63,7 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
     }
 
     @Override
-    public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(Session session, String patientProgramID) {
-
-//        String hql = "SELECT t.therapistID, t.therapistName, tp.programID, tp.programName " +
-//                "FROM Therapist t " +
-//                "JOIN t.therapyProgram tp";
+    public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(Session session, String patientProgramID, String selectedDateLabel, String selectedTimeLabel) {
 
         String hql = "SELECT t.therapistID, t.therapistName, tp.programID, tp.programName " +
                 "FROM Therapist t " +
@@ -80,11 +75,6 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
                 .setParameter("patientProgramID", patientProgramID)
                 .getResultList();
 
-        // Create the query using the HQL string
-//        Query<Object[]> query = session.createQuery(hql);
-
-        // Execute the query and retrieve the results
-//        List<Object[]> resultList = query.list();
 
         // 🔥 Convert the raw Object[] into ProgramDetailsDTO objects
         ArrayList<CustomTherapistDetailsDTO> dtoList = new ArrayList<>();
@@ -97,7 +87,30 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
             ));
         }
 
-        return dtoList;
+
+        ArrayList<CustomTherapistDetailsDTO> newList = new ArrayList<>();
+
+        for (CustomTherapistDetailsDTO therapist : dtoList) {
+            List<TherapySession> sessionsOnDate = session.createQuery(
+                            "FROM TherapySession ts WHERE ts.therapist.id = :therapistId AND ts.sessionDate = :selectedDate", TherapySession.class)
+                    .setParameter("therapistId", therapist.getTherapistID())
+                    .setParameter("selectedDate", selectedDateLabel)
+                    .getResultList();
+
+            boolean hasSessionAtExactTime = false;
+
+            for (TherapySession therapySession : sessionsOnDate) {
+                if (therapySession.getSessionTime().equals(selectedTimeLabel)) {
+                    hasSessionAtExactTime = true;
+                    break;
+                }
+            }
+
+            if (!hasSessionAtExactTime) {
+                newList.add(therapist); // Therapist is free at the selected time
+            }
+        }
+        return newList;
     }
 
     @Override

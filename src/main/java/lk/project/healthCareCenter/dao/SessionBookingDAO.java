@@ -12,6 +12,6 @@ import java.util.ArrayList;
 public interface SessionBookingDAO {
     String generateNextSessionID(Session session) throws SQLException;
     ArrayList<CustomProgramDetailsDTO> loadPatientTable(Session session);
-    ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(Session session, String patientProgramID);
+    ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(Session session, String patientProgramID, String selectedDateLabel, String selectedTimeLabel);
     boolean saveSession(TherapySession sessionDTO, Session session);
 }

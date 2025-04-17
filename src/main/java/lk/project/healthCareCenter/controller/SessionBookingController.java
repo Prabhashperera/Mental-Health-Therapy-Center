@@ -110,7 +110,12 @@ public class SessionBookingController implements Initializable {
         String therapistID = TherapistIDLabel.getText();
         String patientID = patientIDBtn.getText();
         TherapySessionDTO sessionDTO = new TherapySessionDTO(sessionID, date, time, therapistID, patientID);
-        sessionBookingBO.saveSession(sessionDTO);
+        boolean isSaved = sessionBookingBO.saveSession(sessionDTO);
+        if (isSaved) {
+            new Alert(Alert.AlertType.INFORMATION, "Session Saved", ButtonType.OK).show();
+        }else  {
+            new Alert(Alert.AlertType.ERROR, "Could not save session", ButtonType.OK).show();
+        }
     }
 
     @FXML
@@ -171,5 +176,12 @@ public class SessionBookingController implements Initializable {
 
     public String getPatientProgramIDLabel() {
         return patientProgramIDLabel.getText();
+    }
+
+    public String getSelectedDateLabel() {
+        return dateLabel.getValue().toString();
+    }
+    public String getSelectedTimeLabel() {
+        return timeMenuBtn.getText();
     }
 }
