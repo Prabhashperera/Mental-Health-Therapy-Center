@@ -1,7 +1,7 @@
 package lk.project.healthCareCenter.bo;
 
-import lk.project.healthCareCenter.entity.User;
+import lk.project.healthCareCenter.dto.UserDTO;
 
 public interface LoginPageBO {
-    boolean loginCheck(User user);
+    boolean loginCheck(UserDTO user);
 }

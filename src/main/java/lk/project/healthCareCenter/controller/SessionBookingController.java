@@ -86,6 +86,7 @@ public class SessionBookingController implements Initializable {
         Parent root = fxmlLoader.load();
         ShowAllTherapistDetailsController controller = fxmlLoader.getController();
         controller.setSessionBookingController(this);
+        controller.loadTable();
         stage.setScene(new Scene(root));
         stage.setTitle("Therapist Table");
         stage.show();
@@ -97,7 +98,15 @@ public class SessionBookingController implements Initializable {
 
 
 
+
     //CRUD METHODS
+    @FXML
+    private void saveOnClick(ActionEvent actionEvent) {
+        String date = dateLabel.getValue().toString();
+        String time = timeMenuBtn.getText();
+        String therapistID = therapistNameLabel.getText();
+        String patientID = patientIDBtn.getText();
+    }
 
     @FXML
     private void deleteOnClick(ActionEvent actionEvent) {
@@ -105,10 +114,6 @@ public class SessionBookingController implements Initializable {
 
     @FXML
     private void updateOnClick(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    private void saveOnClick(ActionEvent actionEvent) {
     }
 
 
@@ -157,5 +162,9 @@ public class SessionBookingController implements Initializable {
         MenuItem menuItem = (MenuItem) actionEvent.getSource();
         timeMenuBtn.setText(menuItem.getText());
         checkRequiredHeirarchy();
+    }
+
+    public String getPatientProgramIDLabel() {
+        return patientProgramIDLabel.getText();
     }
 }

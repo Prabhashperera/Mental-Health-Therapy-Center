@@ -1,11 +1,7 @@
 package lk.project.healthCareCenter.dto;
 
 
-import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,7 +9,7 @@ import java.util.List;
 @Setter
 @Data
 
-public class TherapyProgram {
+public class TherapyProgramDTO {
     private String programID;
     private String programName;
     private String programDuration;

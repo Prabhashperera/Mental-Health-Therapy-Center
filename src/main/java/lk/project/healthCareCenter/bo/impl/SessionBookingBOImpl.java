@@ -37,8 +37,8 @@ public class SessionBookingBOImpl implements SessionBookingBO{
     }
 
     @Override
-    public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable() {
+    public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(String patientProgramID) {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
-        return sessionBookingDAO.loadTherapistTable(session);
+        return sessionBookingDAO.loadTherapistTable(session , patientProgramID);
     }
 }

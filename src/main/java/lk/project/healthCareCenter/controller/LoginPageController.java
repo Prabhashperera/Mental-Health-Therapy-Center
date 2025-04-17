@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.LoginPageBO;
 import lk.project.healthCareCenter.bo.impl.LoginPageBOImpl;
 import lk.project.healthCareCenter.controller.pupups.ShowPatientTableController;
+import lk.project.healthCareCenter.dto.UserDTO;
 import lk.project.healthCareCenter.entity.User;
 import java.io.IOException;
 
@@ -45,8 +46,8 @@ public class LoginPageController {
             return;
         }
 
-        User user = new User(userName, password, userRole);
-        boolean isValidCredential = loginPageBO.loginCheck(user);
+         UserDTO userDTO = new UserDTO(userName, password, userRole);
+        boolean isValidCredential = loginPageBO.loginCheck(userDTO);
         if (isValidCredential) {
             isLoggedIn = true;
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/home-page.fxml"));

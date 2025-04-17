@@ -41,12 +41,12 @@ public class ShowAllTherapistDetailsController implements Initializable {
         programID.setCellValueFactory(new PropertyValueFactory<>("programID"));
         programName.setCellValueFactory(new PropertyValueFactory<>("programName"));
 
-        loadTable();
     }
 
     //Loader Methods
-    private void loadTable() {
-        ArrayList<CustomTherapistDetailsDTO> detailsDTOS = sessionBookingBO.loadTherapistTable();
+    public void loadTable() {
+        String patientProgramID = sessionBookingController.getPatientProgramIDLabel();
+        ArrayList<CustomTherapistDetailsDTO> detailsDTOS = sessionBookingBO.loadTherapistTable(patientProgramID);
         ObservableList<CustomTherapistDetailsDTO> data = FXCollections.observableArrayList(detailsDTOS);
         therapistTable.setItems(data);
     }

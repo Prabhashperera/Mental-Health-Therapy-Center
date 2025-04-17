@@ -8,5 +8,5 @@ import java.util.ArrayList;
 public interface SessionBookingBO {
     String generateNextSessionID();
     ArrayList<CustomProgramDetailsDTO> loadPatientTable();
-    ArrayList<CustomTherapistDetailsDTO> loadTherapistTable();
+    ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(String patientProgramID);
 }

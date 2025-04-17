@@ -62,17 +62,27 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
     }
 
     @Override
-    public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(Session session) {
+    public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(Session session, String patientProgramID) {
+
+//        String hql = "SELECT t.therapistID, t.therapistName, tp.programID, tp.programName " +
+//                "FROM Therapist t " +
+//                "JOIN t.therapyProgram tp";
 
         String hql = "SELECT t.therapistID, t.therapistName, tp.programID, tp.programName " +
                 "FROM Therapist t " +
-                "JOIN t.therapyProgram tp";
+                "JOIN t.therapyProgram tp " +
+                "WHERE tp.programID = :patientProgramID";
+
+
+        List<Object[]> resultList = session.createQuery(hql)
+                .setParameter("patientProgramID", patientProgramID)
+                .getResultList();
 
         // Create the query using the HQL string
-        Query<Object[]> query = session.createQuery(hql);
+//        Query<Object[]> query = session.createQuery(hql);
 
         // Execute the query and retrieve the results
-        List<Object[]> resultList = query.list();
+//        List<Object[]> resultList = query.list();
 
         // 🔥 Convert the raw Object[] into ProgramDetailsDTO objects
         ArrayList<CustomTherapistDetailsDTO> dtoList = new ArrayList<>();

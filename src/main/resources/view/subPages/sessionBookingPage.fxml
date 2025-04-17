@@ -41,8 +41,8 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Button fx:id="saveBtn" layoutX="121.0" layoutY="374.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
-      <Button fx:id="updateBtn" layoutX="243.0" layoutY="374.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
+      <Button layoutX="121.0" layoutY="374.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
+      <Button layoutX="243.0" layoutY="374.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
       <Button fx:id="deleteBtn" layoutX="366.0" layoutY="374.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
       <Button layoutX="489.0" layoutY="374.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />
       <DatePicker fx:id="dateLabel" layoutX="245.0" layoutY="114.0" prefHeight="26.0" prefWidth="324.0" />

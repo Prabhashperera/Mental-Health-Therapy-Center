@@ -1,7 +1,5 @@
 package lk.project.healthCareCenter.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.*;
 
 @AllArgsConstructor
@@ -10,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 
-public class User {
+public class UserDTO {
     private String userName;
     private String password;
     private String userRole;
