@@ -113,8 +113,10 @@ public class SessionBookingController implements Initializable {
         boolean isSaved = sessionBookingBO.saveSession(sessionDTO);
         if (isSaved) {
             new Alert(Alert.AlertType.INFORMATION, "Session Saved", ButtonType.OK).show();
+            refreshPage();
         }else  {
             new Alert(Alert.AlertType.ERROR, "Could not save session", ButtonType.OK).show();
+            refreshPage();
         }
     }
 
@@ -130,6 +132,8 @@ public class SessionBookingController implements Initializable {
     //Helper Methods
     public void refreshPage() {
         sessionIDLabel.setText(getNextSessionID());
+        dateLabel.setValue(null);
+        timeMenuBtn.setText("Select Time");
         checkRequiredHeirarchy();
     }
 
