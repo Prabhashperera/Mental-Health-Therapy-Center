@@ -23,5 +23,4 @@ public class TherapySession {
     @ManyToOne
     @JoinColumn (name = "patientID")
     private Patient patient;
-
 }

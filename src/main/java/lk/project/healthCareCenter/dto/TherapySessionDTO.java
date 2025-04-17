@@ -12,4 +12,6 @@ public class TherapySessionDTO {
     private String sessionID;
     private String sessionDate;
     private String sessionTime;
+    private String therapistID;
+    private String patientID;
 }

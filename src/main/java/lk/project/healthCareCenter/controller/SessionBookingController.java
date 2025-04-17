@@ -15,6 +15,8 @@ import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetail
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllTherapistDetailsController;
 import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
 import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
+import lk.project.healthCareCenter.dto.TherapySessionDTO;
+import lk.project.healthCareCenter.entity.TherapySession;
 
 import java.io.IOException;
 import java.net.URL;
@@ -102,10 +104,13 @@ public class SessionBookingController implements Initializable {
     //CRUD METHODS
     @FXML
     private void saveOnClick(ActionEvent actionEvent) {
+        String sessionID = sessionIDLabel.getText();
         String date = dateLabel.getValue().toString();
         String time = timeMenuBtn.getText();
-        String therapistID = therapistNameLabel.getText();
+        String therapistID = TherapistIDLabel.getText();
         String patientID = patientIDBtn.getText();
+        TherapySessionDTO sessionDTO = new TherapySessionDTO(sessionID, date, time, therapistID, patientID);
+        sessionBookingBO.saveSession(sessionDTO);
     }
 
     @FXML

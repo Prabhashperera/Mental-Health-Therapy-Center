@@ -3,6 +3,8 @@ package lk.project.healthCareCenter.dao.impl;
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
 import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
+import lk.project.healthCareCenter.dto.TherapySessionDTO;
+import lk.project.healthCareCenter.entity.TherapySession;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -96,6 +98,16 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
         }
 
         return dtoList;
+    }
+
+    @Override
+    public boolean saveSession(TherapySession therapySession, Session session) {
+        try {
+            session.persist(therapySession);
+            return true;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

@@ -5,8 +5,13 @@ import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dao.impl.SessionBookingDAOImpl;
 import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
 import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
+import lk.project.healthCareCenter.dto.TherapySessionDTO;
+import lk.project.healthCareCenter.entity.Patient;
+import lk.project.healthCareCenter.entity.Therapist;
+import lk.project.healthCareCenter.entity.TherapySession;
 import lk.project.healthCareCenter.hibernateConfig.FactoryConfiguration;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 
@@ -40,5 +45,27 @@ public class SessionBookingBOImpl implements SessionBookingBO{
     public ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(String patientProgramID) {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         return sessionBookingDAO.loadTherapistTable(session , patientProgramID);
+    }
+
+    @Override
+    public boolean saveSession(TherapySessionDTO sessionDTO) {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            Therapist therapist = session.get(Therapist.class, sessionDTO.getTherapistID());
+            Patient patient = session.get(Patient.class, sessionDTO.getPatientID());
+            TherapySession therapySession = new TherapySession(sessionDTO.getSessionID(), sessionDTO.getSessionDate(), sessionDTO.getSessionTime(), therapist, patient);
+            boolean isSaved = sessionBookingDAO.saveSession(therapySession, session);
+            if (isSaved) {
+                transaction.commit();
+                System.out.println("Saved Session");
+            }else {
+                transaction.rollback();
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
