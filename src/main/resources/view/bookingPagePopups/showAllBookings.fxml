@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="373.0" prefWidth="674.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.bookingPopups.ShowAllBookingsController">
+   <children>
+      <Text fill="#3700ff" layoutX="285.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOKINGS TABLE" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TableView fx:id="bookingsTable" layoutX="33.0" layoutY="58.0" prefHeight="250.0" prefWidth="606.0">
+        <columns>
+            <TableColumn fx:id="sessionID" prefWidth="79.20001602172852" text="SessionID" />
+            <TableColumn fx:id="sessionDate" prefWidth="176.7999725341797" text="Session Date" />
+            <TableColumn fx:id="sessionTime" prefWidth="71.20001220703125" text="Time" />
+            <TableColumn fx:id="patientID" prefWidth="135.20001220703125" text="Patient ID" />
+            <TableColumn fx:id="therapistID" prefWidth="139.99993896484375" text="Therapist ID" />
+        </columns>
+      </TableView>
+      <Button layoutX="522.0" layoutY="324.0" mnemonicParsing="false" onAction="#selectOnClick" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
+   </children>
+</AnchorPane>

@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
+import lk.project.healthCareCenter.controller.bookingPopups.ShowAllBookingsController;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetailsController;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllTherapistDetailsController;
 import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
@@ -82,7 +83,6 @@ public class SessionBookingController implements Initializable {
 
     @FXML
     private void showTherapistTableOnClick(ActionEvent actionEvent) throws IOException {
-
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/bookingPagePopups/showAllTherapistDetails.fxml"));
         Parent root = fxmlLoader.load();
@@ -95,7 +95,16 @@ public class SessionBookingController implements Initializable {
     }
 
     @FXML
-    private void showBookingsTableOnClick(ActionEvent actionEvent) {
+    private void showBookingsTableOnClick(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/bookingPagePopups/showAllBookings.fxml"));
+        Parent root = fxmlLoader.load();
+        ShowAllBookingsController controller = fxmlLoader.getController();
+        controller.setSessionBookingController(this);
+        controller.loadTable();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Bookings Table");
+        stage.show();
     }
 
 
@@ -121,11 +130,11 @@ public class SessionBookingController implements Initializable {
     }
 
     @FXML
-    private void deleteOnClick(ActionEvent actionEvent) {
+    private void updateOnClick(ActionEvent actionEvent) {
     }
 
     @FXML
-    private void updateOnClick(ActionEvent actionEvent) {
+    private void deleteOnClick(ActionEvent actionEvent) {
     }
 
 

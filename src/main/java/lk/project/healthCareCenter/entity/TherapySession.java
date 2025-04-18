@@ -23,4 +23,12 @@ public class TherapySession {
     @ManyToOne
     @JoinColumn (name = "patientID")
     private Patient patient;
+
+    public TherapySession(String sessionID, String sessionDate, String sessionTime, String patientID, String therapistID) {
+        sessionID = sessionID;
+        sessionDate = sessionDate;
+        sessionTime = sessionTime;
+        patientID = patientID;
+        therapistID = therapistID;
+    }
 }

@@ -23,7 +23,7 @@ public class Patient {
     private String mobileNumber;
     private String medicalHistory;
 
-    @OneToMany (mappedBy = "patient" , cascade = CascadeType.ALL)
+    @OneToMany (fetch = FetchType.EAGER, mappedBy = "patient" , cascade = CascadeType.ALL)
     private List<ProgramDetails> programDetails = new ArrayList<>();
 
     @OneToMany (mappedBy = "patient" , cascade = CascadeType.ALL)

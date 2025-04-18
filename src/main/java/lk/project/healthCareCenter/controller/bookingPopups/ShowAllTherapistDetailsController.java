@@ -58,7 +58,6 @@ public class ShowAllTherapistDetailsController implements Initializable {
         this.sessionBookingController = sessionBookingController;
     }
 
-
     public void selectOnClick(ActionEvent actionEvent) {
         CustomTherapistDetailsDTO selectedItem = therapistTable.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
@@ -69,4 +68,5 @@ public class ShowAllTherapistDetailsController implements Initializable {
             stage.close();
         }
     }
+
 }

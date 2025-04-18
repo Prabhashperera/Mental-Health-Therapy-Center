@@ -123,4 +123,21 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
         }
     }
 
+    @Override
+    public ArrayList<TherapySession> showAllBookingsTable(Session session) {
+            String hql = "FROM TherapySession";
+            List<TherapySession> sessions = session.createQuery(hql, TherapySession.class).getResultList();
+        ArrayList<TherapySession> dtoList = new ArrayList<>();
+            for (TherapySession therapySession : sessions) {
+                TherapySession therapySessions = new TherapySession();
+                therapySessions.setSessionID(therapySession.getSessionID());
+                therapySessions.setSessionDate(therapySession.getSessionDate());
+                therapySessions.setSessionTime(therapySession.getSessionTime());
+                therapySessions.setTherapist(therapySession.getTherapist());
+                therapySessions.setPatient(therapySession.getPatient());
+                dtoList.add(therapySessions);
+            }
+            return dtoList;
+    }
+
 }

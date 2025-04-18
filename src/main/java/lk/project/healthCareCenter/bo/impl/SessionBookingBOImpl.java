@@ -1,5 +1,6 @@
 package lk.project.healthCareCenter.bo.impl;
 
+import javafx.collections.FXCollections;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dao.impl.SessionBookingDAOImpl;
@@ -68,4 +69,35 @@ public class SessionBookingBOImpl implements SessionBookingBO{
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public ArrayList<TherapySessionDTO> showAllBookingsTable() {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        ArrayList<TherapySession> list = sessionBookingDAO.showAllBookingsTable(session);
+        ArrayList<TherapySessionDTO> data = new ArrayList<>();
+
+        for (TherapySession sessionEntity : list) {
+            TherapySessionDTO therapySessionDTO = new TherapySessionDTO();
+            therapySessionDTO.setSessionID(sessionEntity.getSessionID());
+            therapySessionDTO.setSessionDate(sessionEntity.getSessionDate());
+            therapySessionDTO.setSessionTime(sessionEntity.getSessionTime());
+
+            if (sessionEntity.getPatient() != null) {
+                therapySessionDTO.setPatientID(sessionEntity.getPatient().getPatientID());
+            } else {
+                therapySessionDTO.setPatientID("N/A"); // or "" or null if preferred
+            }
+
+            if (sessionEntity.getTherapist() != null) {
+                therapySessionDTO.setTherapistID(sessionEntity.getTherapist().getTherapistID());
+            } else {
+                therapySessionDTO.setTherapistID("N/A");
+            }
+
+            data.add(therapySessionDTO);
+        }
+
+        return data;
+    }
+
 }
