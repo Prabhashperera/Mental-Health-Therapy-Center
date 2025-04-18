@@ -109,8 +109,6 @@ public class SessionBookingController implements Initializable {
     }
 
 
-
-
     //CRUD METHODS
     @FXML
     private void saveOnClick(ActionEvent actionEvent) {
@@ -132,10 +130,31 @@ public class SessionBookingController implements Initializable {
 
     @FXML
     private void updateOnClick(ActionEvent actionEvent) {
+        String sessionID = sessionIDLabel.getText();
+        String date = dateLabel.getValue().toString();
+        String time = timeMenuBtn.getText();
+        String therapistID = TherapistIDLabel.getText();
+        String patientID = patientIDBtn.getText();
+        TherapySessionDTO sessionDTO = new TherapySessionDTO(sessionID, date, time, therapistID, patientID);
+        boolean isUpdated = sessionBookingBO.updateBooking(sessionDTO);
+        if (isUpdated) {
+            new Alert(Alert.AlertType.INFORMATION, "Session Updated", ButtonType.OK).show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Could not update session", ButtonType.OK).show();
+        }
+        refreshPage();
     }
 
     @FXML
     private void deleteOnClick(ActionEvent actionEvent) {
+        String sessionID = sessionIDLabel.getText();
+        boolean isDeleted = sessionBookingBO.deleteBooking(sessionID);
+        if (isDeleted) {
+            new Alert(Alert.AlertType.INFORMATION, "Session Deleted", ButtonType.OK).show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Could not delete session", ButtonType.OK).show();
+        }
+        refreshPage();
     }
 
 

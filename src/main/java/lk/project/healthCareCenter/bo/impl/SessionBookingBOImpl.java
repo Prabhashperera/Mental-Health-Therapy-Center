@@ -89,4 +89,42 @@ public class SessionBookingBOImpl implements SessionBookingBO{
         return data;
     }
 
+    @Override
+    public boolean updateBooking(TherapySessionDTO sessionDto) {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            boolean isUpdated = sessionBookingDAO.updateBooking(session, sessionDto);
+            if (isUpdated) {
+                transaction.commit();
+                return true;
+            }
+        } catch (Exception e) {
+            transaction.rollback();
+            throw new RuntimeException(e);
+        }finally {
+            session.close();
+        }
+        return true;
+    }
+
+    @Override
+    public boolean deleteBooking(String sessionID) {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            boolean isDeleted = sessionBookingDAO.deleteBooking(session, sessionID);
+            if (isDeleted) {
+                transaction.commit();
+                return true;
+            }
+        }catch (Exception e) {
+            transaction.rollback();
+            e.getMessage();
+        }finally {
+            session.close();
+        }
+        return false;
+    }
+
 }

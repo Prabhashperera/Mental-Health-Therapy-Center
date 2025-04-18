@@ -13,4 +13,6 @@ public interface SessionBookingBO {
     ArrayList<CustomTherapistDetailsDTO> loadTherapistTable(String patientProgramID , String selectedDateLabel, String selectedTimeLabel);
     boolean saveSession(TherapySessionDTO sessionDTO);
     ArrayList<TherapySessionDTO> showAllBookingsTable();
+    boolean updateBooking(TherapySessionDTO sessionDto);
+    boolean deleteBooking(String sessionID);
 }

@@ -3,6 +3,9 @@ package lk.project.healthCareCenter.dao.impl;
 import lk.project.healthCareCenter.dao.SessionBookingDAO;
 import lk.project.healthCareCenter.dto.CustomProgramDetailsDTO;
 import lk.project.healthCareCenter.dto.CustomTherapistDetailsDTO;
+import lk.project.healthCareCenter.dto.TherapySessionDTO;
+import lk.project.healthCareCenter.entity.Patient;
+import lk.project.healthCareCenter.entity.Therapist;
 import lk.project.healthCareCenter.entity.TherapySession;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -138,6 +141,39 @@ public class SessionBookingDAOImpl implements SessionBookingDAO {
                 dtoList.add(therapySessions);
             }
             return dtoList;
+    }
+
+    @Override
+    public boolean updateBooking(Session session, TherapySessionDTO sessionDTO) {
+        try {
+            TherapySession therapySession = session.get(TherapySession.class, sessionDTO.getSessionID());
+
+            therapySession.setSessionDate(sessionDTO.getSessionDate());
+            therapySession.setSessionTime(sessionDTO.getSessionTime());
+
+            Patient updatedPatient = session.get(Patient.class, sessionDTO.getPatientID());
+            therapySession.setPatient(updatedPatient);
+
+            Therapist updatedTherapist = session.get(Therapist.class, sessionDTO.getTherapistID());
+            therapySession.setTherapist(updatedTherapist);
+
+            session.merge(therapySession);
+            return true;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean deleteBooking(Session session, String sessionID) {
+        try {
+            TherapySession therapySession = session.get(TherapySession.class, sessionID);
+            session.remove(therapySession);
+            return true;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
