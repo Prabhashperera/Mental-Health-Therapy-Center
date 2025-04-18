@@ -14,7 +14,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="bookingsTable" layoutX="33.0" layoutY="58.0" prefHeight="250.0" prefWidth="606.0">
+      <TableView fx:id="bookingsTable" layoutX="33.0" layoutY="58.0" onMouseClicked="#tableClickedOnAction" prefHeight="250.0" prefWidth="606.0">
         <columns>
             <TableColumn fx:id="sessionID" prefWidth="79.20001602172852" text="SessionID" />
             <TableColumn fx:id="sessionDate" prefWidth="176.7999725341797" text="Session Date" />

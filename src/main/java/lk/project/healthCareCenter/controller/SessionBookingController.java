@@ -21,6 +21,7 @@ import lk.project.healthCareCenter.entity.TherapySession;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class SessionBookingController implements Initializable {
@@ -196,5 +197,16 @@ public class SessionBookingController implements Initializable {
     }
     public String getSelectedTimeLabel() {
         return timeMenuBtn.getText();
+    }
+
+    public void getSelectedItem(TherapySessionDTO selectedItem) {
+        sessionIDLabel.setText(selectedItem.getSessionID());
+        dateLabel.setValue(LocalDate.parse(selectedItem.getSessionDate()));
+        timeMenuBtn.setText(selectedItem.getSessionTime());
+        patientIDBtn.setText(selectedItem.getPatientID());
+        TherapistIDLabel.setText(selectedItem.getTherapistID());
+        checkRequiredHeirarchy();
+        therapistNameLabel.setText(selectedItem.getTherapistID());
+        patientProgramIDLabel.setText(selectedItem.getPatientID());
     }
 }

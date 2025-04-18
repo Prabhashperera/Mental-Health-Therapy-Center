@@ -81,7 +81,8 @@ public class SessionBookingBOImpl implements SessionBookingBO{
             therapySessionDTO.setSessionID(sessionEntity.getSessionID());
             therapySessionDTO.setSessionDate(sessionEntity.getSessionDate());
             therapySessionDTO.setSessionTime(sessionEntity.getSessionTime());
-
+            therapySessionDTO.setPatientID(sessionEntity.getPatient().getPatientID());
+            therapySessionDTO.setTherapistID(sessionEntity.getTherapist().getTherapistID());
             data.add(therapySessionDTO);
         }
 

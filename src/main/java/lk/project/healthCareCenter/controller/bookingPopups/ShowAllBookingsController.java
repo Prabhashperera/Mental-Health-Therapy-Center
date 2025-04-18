@@ -6,9 +6,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.SessionBookingController;
@@ -33,6 +36,8 @@ public class ShowAllBookingsController implements Initializable {
     @FXML
     private TableColumn<TherapySessionDTO, String> therapistID;
 
+    TherapySessionDTO selectedItem = null;
+
     private SessionBookingController sessionBookingController;
     private SessionBookingBO sessionBookingBO = new SessionBookingBOImpl();
 
@@ -52,6 +57,13 @@ public class ShowAllBookingsController implements Initializable {
     }
 
     public void selectOnClick(ActionEvent actionEvent) {
+        sessionBookingController.getSelectedItem(selectedItem);
+        if (selectedItem != null) {
+            // Retrieve the stage from the event source (e.g., the button)
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            // Close the stage
+            stage.close();
+        }
     }
 
     public void loadTable() {
@@ -64,5 +76,9 @@ public class ShowAllBookingsController implements Initializable {
 
     public void setSessionBookingController(SessionBookingController sessionBookingController) {
         this.sessionBookingController = sessionBookingController;
+    }
+
+    public void tableClickedOnAction(MouseEvent mouseEvent) {
+       selectedItem  = bookingsTable.getSelectionModel().getSelectedItem();
     }
 }
