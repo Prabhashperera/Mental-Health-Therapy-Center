@@ -5,9 +5,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.HomePageController">
+<AnchorPane prefHeight="702.0" prefWidth="1383.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.HomePageController">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="262.0" style="-fx-background-color: darkblue;">
+      <AnchorPane prefHeight="702.0" prefWidth="262.0" style="-fx-background-color: darkblue;">
          <children>
             <Button layoutX="40.0" layoutY="37.0" mnemonicParsing="false" onAction="#registerOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Register Patient" />
             <Button layoutX="40.0" layoutY="88.0" mnemonicParsing="false" onAction="#programOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Select Program" />
@@ -17,11 +17,11 @@
             <Button layoutX="40.0" layoutY="232.0" mnemonicParsing="false" onAction="#sessionBookingOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Booking" />
          </children>
       </AnchorPane>
-      <Text layoutX="506.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Therapy Center" wrappingWidth="222.40000000000003">
+      <Text layoutX="297.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Therapy Center" wrappingWidth="222.40000000000003">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="middlePane" layoutX="273.0" layoutY="55.0" prefHeight="530.0" prefWidth="719.0" />
+      <AnchorPane fx:id="middlePane" layoutX="297.0" layoutY="75.0" prefHeight="610.0" prefWidth="1060.0" />
    </children>
 </AnchorPane>
