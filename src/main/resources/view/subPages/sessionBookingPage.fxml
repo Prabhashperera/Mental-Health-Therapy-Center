@@ -9,53 +9,69 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="530.0" prefWidth="719.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.SessionBookingController">
+<AnchorPane prefHeight="610.0" prefWidth="1060.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.SessionBookingController">
    <children>
-      <Label layoutX="133.0" layoutY="82.0" prefHeight="19.0" prefWidth="100.0" text="Session ID       :">
+      <Label layoutX="353.0" layoutY="361.0" prefHeight="27.0" prefWidth="190.0" style="-fx-text-fill: green;" text="Payment AMOUNT      :">
          <font>
-            <Font size="13.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="117.0" text="Booking Date  :">
+      <Label layoutX="263.0" layoutY="145.0" text="Booking Date  :">
          <font>
-            <Font size="13.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="sessionIDLabel" layoutX="250.0" layoutY="82.0" text="100">
+      <Label fx:id="sessionIDLabel" layoutX="444.0" layoutY="110.0" text="100">
          <font>
-            <Font size="13.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="159.0" prefHeight="19.0" prefWidth="94.0" text="Booking Time  :">
+      <Label layoutX="263.0" layoutY="195.0" prefHeight="27.0" prefWidth="139.0" text="Booking Time  :">
          <font>
-            <Font size="13.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="197.0" text="Patient ID        :">
+      <Label layoutX="263.0" layoutY="244.0" text="Patient ID        :">
          <font>
-            <Font size="13.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="132.0" layoutY="239.0" text="Therapist ID     :">
+      <Label layoutX="262.0" layoutY="296.0" text="Therapist ID     :">
          <font>
-            <Font size="13.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="121.0" layoutY="374.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
-      <Button layoutX="243.0" layoutY="374.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
-      <Button fx:id="deleteBtn" layoutX="366.0" layoutY="374.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
-      <Button layoutX="489.0" layoutY="374.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />
-      <DatePicker fx:id="dateLabel" layoutX="245.0" layoutY="114.0" prefHeight="26.0" prefWidth="324.0" />
-      <MenuButton fx:id="timeMenuBtn" layoutX="245.0" layoutY="156.0" mnemonicParsing="false" onAction="#menuBtnOnClick" prefHeight="26.0" prefWidth="324.0" text="Select Booking Time">
+      <Button layoutX="145.0" layoutY="509.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
+      <Button layoutX="335.0" layoutY="509.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="34.0" prefWidth="160.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
+      <Button fx:id="deleteBtn" layoutX="522.0" layoutY="508.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
+      <Button layoutX="718.0" layoutY="508.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />
+      <DatePicker fx:id="dateLabel" layoutX="441.0" layoutY="140.0" prefHeight="34.0" prefWidth="324.0" />
+      <MenuButton fx:id="timeMenuBtn" layoutX="438.0" layoutY="190.0" mnemonicParsing="false" onAction="#menuBtnOnClick" prefHeight="34.0" prefWidth="324.0" text="Select Booking Time">
          <items>
             <MenuItem mnemonicParsing="false" text="1:30" />
             <MenuItem mnemonicParsing="false" text="2:30" />
             <MenuItem mnemonicParsing="false" text="3:30" />
             <MenuItem mnemonicParsing="false" text="4:30" />
          </items></MenuButton>
-      <Button fx:id="patientIDBtn" layoutX="245.0" layoutY="195.0" mnemonicParsing="false" onAction="#showPatientTableOnClick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
-      <Button fx:id="TherapistIDLabel" layoutX="244.0" layoutY="234.0" mnemonicParsing="false" onAction="#showTherapistTableOnClick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
-      <Text fx:id="patientProgramIDLabel" layoutX="367.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient - Program" />
-      <Text fx:id="therapistNameLabel" layoutX="368.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Therapist - Name" />
+      <Button fx:id="patientIDBtn" layoutX="436.0" layoutY="239.0" mnemonicParsing="false" onAction="#showPatientTableOnClick" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
+      <Button fx:id="TherapistIDLabel" layoutX="435.0" layoutY="290.0" mnemonicParsing="false" onAction="#showTherapistTableOnClick" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
+      <Text fx:id="patientProgramIDLabel" layoutX="588.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient - Program">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fx:id="therapistNameLabel" layoutX="589.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Therapist - Name">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Label layoutX="264.0" layoutY="106.0" prefHeight="27.0" prefWidth="132.0" text="Session ID       :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="paymentAmount" layoutX="556.0" layoutY="361.0" prefHeight="27.0" prefWidth="66.0" style="-fx-text-fill: green;" text="120000">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

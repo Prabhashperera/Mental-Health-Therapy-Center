@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -22,6 +23,32 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="middlePane" layoutX="297.0" layoutY="75.0" prefHeight="610.0" prefWidth="1060.0" />
+      <AnchorPane fx:id="middlePane" layoutX="297.0" layoutY="75.0" prefHeight="610.0" prefWidth="1060.0">
+         <children>
+            <AnchorPane layoutX="263.0" layoutY="-65.0" prefHeight="42.0" prefWidth="793.0" style="-fx-background-color: blue;">
+               <children>
+                  <Label fx:id="currentTimeShow" layoutX="192.0" layoutY="11.0" style="-fx-text-fill: white;" text="00:00:00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="323.0" layoutY="11.0" style="-fx-text-fill: white;" text="Date - ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currentDateShow" layoutX="370.0" layoutY="11.0" style="-fx-text-fill: white;" text="2025/03/4">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <Label layoutX="643.0" layoutY="21.0" style="-fx-text-fill: white;" text="Current Time  - ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
