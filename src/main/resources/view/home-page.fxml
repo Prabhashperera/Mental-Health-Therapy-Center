@@ -8,6 +8,30 @@
 
 <AnchorPane prefHeight="702.0" prefWidth="1383.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.HomePageController">
    <children>
+      <AnchorPane layoutX="540.0" layoutY="20.0" prefHeight="42.0" prefWidth="793.0" style="-fx-background-color: blue;">
+         <children>
+            <Label fx:id="currentTimeShow" layoutX="207.0" layoutY="11.0" style="-fx-text-fill: white;" text="00:00:00">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="331.0" layoutY="11.0" style="-fx-text-fill: white;" text="Date - ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentDateShow" layoutX="381.0" layoutY="11.0" style="-fx-text-fill: white;" text="2025/03/4">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="11.0" style="-fx-text-fill: white;" text="Current Time  - ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
       <AnchorPane prefHeight="702.0" prefWidth="262.0" style="-fx-background-color: darkblue;">
          <children>
             <Button layoutX="40.0" layoutY="37.0" mnemonicParsing="false" onAction="#registerOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Register Patient" />
@@ -18,37 +42,11 @@
             <Button layoutX="40.0" layoutY="232.0" mnemonicParsing="false" onAction="#sessionBookingOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Booking" />
          </children>
       </AnchorPane>
-      <Text layoutX="297.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Therapy Center" wrappingWidth="222.40000000000003">
+      <Text layoutX="297.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Therapy Center" wrappingWidth="222.40000000000003">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="middlePane" layoutX="297.0" layoutY="75.0" prefHeight="610.0" prefWidth="1060.0">
-         <children>
-            <AnchorPane layoutX="263.0" layoutY="-65.0" prefHeight="42.0" prefWidth="793.0" style="-fx-background-color: blue;">
-               <children>
-                  <Label fx:id="currentTimeShow" layoutX="192.0" layoutY="11.0" style="-fx-text-fill: white;" text="00:00:00">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="323.0" layoutY="11.0" style="-fx-text-fill: white;" text="Date - ">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="currentDateShow" layoutX="370.0" layoutY="11.0" style="-fx-text-fill: white;" text="2025/03/4">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </children></AnchorPane>
-      <Label layoutX="643.0" layoutY="21.0" style="-fx-text-fill: white;" text="Current Time  - ">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
+      <AnchorPane fx:id="middlePane" layoutX="297.0" layoutY="75.0" prefHeight="610.0" prefWidth="1060.0" />
    </children>
 </AnchorPane>

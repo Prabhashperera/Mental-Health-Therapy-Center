@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
@@ -91,8 +92,11 @@ public class HomePageController implements Initializable {
 
     @FXML
     private void sessionBookingOnClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/subPages/sessionBookingPage.fxml"));
+        AnchorPane pane = loader.load(); // This loads the UI
         middlePane.getChildren().clear();
-        AnchorPane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/subPages/sessionBookingPage.fxml")));
         middlePane.getChildren().add(pane);
+        SessionBookingController controller = loader.getController();
+        controller.setHomePageController(this);
     }
 }

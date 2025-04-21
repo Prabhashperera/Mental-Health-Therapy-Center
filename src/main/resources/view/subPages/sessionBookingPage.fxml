@@ -68,7 +68,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="paymentAmount" layoutX="556.0" layoutY="361.0" prefHeight="27.0" prefWidth="66.0" style="-fx-text-fill: green;" text="120000">
+      <Label fx:id="toPayAmountLabel" layoutX="556.0" layoutY="361.0" prefHeight="27.0" prefWidth="66.0" style="-fx-text-fill: green;" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="353.0" layoutY="395.0" prefHeight="27.0" prefWidth="190.0" style="-fx-text-fill: green;" text="Available Weeks          :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="availableWeeksLabel" layoutX="555.0" layoutY="395.0" prefHeight="27.0" prefWidth="190.0" style="-fx-text-fill: green;" text="Weeks">
          <font>
             <Font size="18.0" />
          </font>

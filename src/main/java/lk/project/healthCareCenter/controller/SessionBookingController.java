@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.project.healthCareCenter.bo.PaymentBO;
 import lk.project.healthCareCenter.bo.SessionBookingBO;
+import lk.project.healthCareCenter.bo.impl.PaymentBOImpl;
 import lk.project.healthCareCenter.bo.impl.SessionBookingBOImpl;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllBookingsController;
 import lk.project.healthCareCenter.controller.bookingPopups.ShowAllPatientDetailsController;
@@ -25,6 +27,10 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class SessionBookingController implements Initializable {
+    @FXML
+    private Label availableWeeksLabel;
+    @FXML
+    private Label toPayAmountLabel;
     @FXML
     private Text therapistNameLabel;
     @FXML
@@ -57,6 +63,10 @@ public class SessionBookingController implements Initializable {
 
     //BO CLASS INJECTION
     private final SessionBookingBO sessionBookingBO = new SessionBookingBOImpl();
+    private final PaymentBO paymentBO = new PaymentBOImpl();
+
+    //Controller
+    HomePageController homePageController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -117,8 +127,16 @@ public class SessionBookingController implements Initializable {
         String time = timeMenuBtn.getText();
         String therapistID = TherapistIDLabel.getText();
         String patientID = patientIDBtn.getText();
+        String toPayAmount = toPayAmountLabel.getText();
         TherapySessionDTO sessionDTO = new TherapySessionDTO(sessionID, date, time, therapistID, patientID);
         boolean isSaved = sessionBookingBO.saveSession(sessionDTO);
+        if (isSaved) {
+            boolean isSavedPayment = paymentBO.savePayment(date, toPayAmount, patientID, patientProgramIDLabel.getText());
+            if (isSavedPayment) {
+                new Alert(Alert.AlertType.INFORMATION, "Saved Payment").show();
+            }
+        }
+
         if (isSaved) {
             new Alert(Alert.AlertType.INFORMATION, "Session Saved", ButtonType.OK).show();
             refreshPage();
@@ -193,6 +211,13 @@ public class SessionBookingController implements Initializable {
         patientIDBtn.setText(selectedItem.getPatientID());
         patientProgramIDLabel.setText(selectedItem.getProgramID());
         checkRequiredHeirarchy();
+        //Set Payement for Program Each Week
+        double toPayAmount = paymentBO.checkProgramPayments(patientProgramIDLabel.getText());
+        toPayAmountLabel.setText(toPayAmount + "");
+        String patientID = patientIDBtn.getText();
+        String programID = patientProgramIDLabel.getText();
+        String weeks = paymentBO.checkAvailableWeeks(patientID , programID);
+        availableWeeksLabel.setText(weeks);
     }
 
     public void setTherapistBtnDetails(CustomTherapistDetailsDTO selectedItem) {
@@ -227,5 +252,9 @@ public class SessionBookingController implements Initializable {
         checkRequiredHeirarchy();
         therapistNameLabel.setText(selectedItem.getTherapistID());
         patientProgramIDLabel.setText(selectedItem.getPatientID());
+    }
+
+    public void setHomePageController(HomePageController homePageControllerLink) {
+        homePageController = homePageControllerLink;
     }
 }
