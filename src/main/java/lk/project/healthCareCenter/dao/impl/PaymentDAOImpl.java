@@ -41,18 +41,18 @@ public class PaymentDAOImpl implements PaymentDAO {
     @Override
     public int checkAvailableWeeks(String patientID, String programID, Session session) {
         String hql = "SELECT COUNT(p) FROM Payment p WHERE p.therapyProgram.programID = :programID AND p.patient.patientID = :patientID";
-        System.out.println(patientID);
-        System.out.println(programID);
         Query<Long> query = session.createQuery(hql, Long.class);
         query.setParameter("programID", programID);
         query.setParameter("patientID", patientID);
+
         TherapyProgram therapyProgram = session.get(TherapyProgram.class, programID);
         String weeksString = therapyProgram.getProgramDuration();
+
         int weekCount = Integer.parseInt(weeksString.split(" ")[0]);
         int payedDays = Math.toIntExact((Long) query.getSingleResult());
+
         int returnCount = weekCount - payedDays;
-        System.out.println(weekCount + " - " + payedDays);
-        System.out.println(returnCount + " all");
+
         return returnCount;
     }
 }
