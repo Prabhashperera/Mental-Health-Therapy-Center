@@ -12,6 +12,8 @@ import lombok.*;
 @Entity
 public class Payment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int PaymentID;
     private String paymentDate;
     private int paymentAmount;
 
@@ -23,4 +25,10 @@ public class Payment {
     @JoinColumn (name = "programID")
     private TherapyProgram therapyProgram;
 
+    public Payment(String date, int programFee, Patient patient, TherapyProgram therapyProgram) {
+        this.paymentDate = date;
+        this.paymentAmount = programFee;
+        this.patient = patient;
+        this.therapyProgram = therapyProgram;
+    }
 }

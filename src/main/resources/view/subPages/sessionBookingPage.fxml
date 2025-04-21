@@ -41,7 +41,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="145.0" layoutY="509.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
+      <Button fx:id="saveBtn" layoutX="145.0" layoutY="509.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
       <Button layoutX="335.0" layoutY="509.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="34.0" prefWidth="160.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
       <Button fx:id="deleteBtn" layoutX="522.0" layoutY="508.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
       <Button layoutX="718.0" layoutY="508.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />

@@ -27,6 +27,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class SessionBookingController implements Initializable {
+    public Button saveBtn;
     @FXML
     private Label availableWeeksLabel;
     @FXML
@@ -218,6 +219,9 @@ public class SessionBookingController implements Initializable {
         String programID = patientProgramIDLabel.getText();
         String weeks = paymentBO.checkAvailableWeeks(patientID , programID);
         availableWeeksLabel.setText(weeks);
+        if (weeks.equals("0")) {
+            saveBtn.setDisable(true);
+        }
     }
 
     public void setTherapistBtnDetails(CustomTherapistDetailsDTO selectedItem) {
