@@ -5,25 +5,34 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.LoginPageController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to bottom, #b2ebf2, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.LoginPageController">
    <children>
-      <Text layoutX="262.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN PAGE" wrappingWidth="175.7366943359375">
+      <ImageView fitHeight="400.0" fitWidth="700.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imgs/ligin%20img.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutY="25.0" opacity="0.83" prefHeight="59.0" prefWidth="707.0" style="-fx-background-color: black;" />
+      <Text fill="WHITE" layoutX="262.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN PAGE" wrappingWidth="175.7366943359375">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <Label layoutX="170.0" layoutY="121.0" text="User Name : ">
+      <Label layoutX="170.0" layoutY="125.0" text="User Name : ">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="170.0" layoutY="160.0" text="Password   : ">
+      <Label layoutX="170.0" layoutY="163.0" text="Password   : ">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <TextField fx:id="userNameLabel" layoutX="270.0" layoutY="115.0" prefHeight="26.0" prefWidth="254.0" style="-fx-background-color: transparent; -fx-border-color: blue; -fx-border-width: 0 0 1px 0;" />
@@ -37,7 +46,7 @@
             <Font size="13.0" />
          </font>
       </MenuButton>
-      <Label layoutX="170.0" layoutY="205.0" text="User Role   : ">
+      <Label layoutX="170.0" layoutY="205.0" style="-fx-font-weight: bold;" text="User Role   : ">
          <font>
             <Font size="14.0" />
          </font>
