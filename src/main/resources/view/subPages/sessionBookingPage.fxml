@@ -5,48 +5,71 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="610.0" prefWidth="1060.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.SessionBookingController">
    <children>
-      <Label layoutX="353.0" layoutY="361.0" prefHeight="27.0" prefWidth="190.0" style="-fx-text-fill: green;" text="Payment AMOUNT      :">
+      <ImageView fitHeight="610.0" fitWidth="1060.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imgs/bg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="353.0" layoutY="361.0" prefHeight="27.0" prefWidth="204.0" style="-fx-text-fill: black;" text="Payment AMOUNT      :" textFill="#d72b2b">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
       <Label layoutX="263.0" layoutY="145.0" text="Booking Date  :">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Label fx:id="sessionIDLabel" layoutX="444.0" layoutY="110.0" text="100">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <Label layoutX="263.0" layoutY="195.0" prefHeight="27.0" prefWidth="139.0" text="Booking Time  :">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Label layoutX="263.0" layoutY="244.0" text="Patient ID        :">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Label layoutX="262.0" layoutY="296.0" text="Therapist ID     :">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
       <Button fx:id="saveBtn" layoutX="145.0" layoutY="509.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
       <Button layoutX="335.0" layoutY="509.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="34.0" prefWidth="160.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
       <Button fx:id="deleteBtn" layoutX="522.0" layoutY="508.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
       <Button layoutX="718.0" layoutY="508.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />
       <DatePicker fx:id="dateLabel" layoutX="441.0" layoutY="140.0" prefHeight="34.0" prefWidth="324.0" />
-      <MenuButton fx:id="timeMenuBtn" layoutX="438.0" layoutY="190.0" mnemonicParsing="false" onAction="#menuBtnOnClick" prefHeight="34.0" prefWidth="324.0" text="Select Booking Time">
+      <MenuButton fx:id="timeMenuBtn" layoutX="441.0" layoutY="190.0" mnemonicParsing="false" onAction="#menuBtnOnClick" prefHeight="34.0" prefWidth="324.0" text="Select Booking Time">
          <items>
             <MenuItem mnemonicParsing="false" text="1:30" />
             <MenuItem mnemonicParsing="false" text="2:30" />
@@ -57,31 +80,52 @@
       <Button fx:id="TherapistIDLabel" layoutX="435.0" layoutY="290.0" mnemonicParsing="false" onAction="#showTherapistTableOnClick" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Select" />
       <Text fx:id="patientProgramIDLabel" layoutX="588.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient - Program">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font></Text>
       <Text fx:id="therapistNameLabel" layoutX="589.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Therapist - Name">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font></Text>
       <Label layoutX="264.0" layoutY="106.0" prefHeight="27.0" prefWidth="132.0" text="Session ID       :">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="toPayAmountLabel" layoutX="556.0" layoutY="361.0" prefHeight="27.0" prefWidth="66.0" style="-fx-text-fill: green;" text="0">
+      <Label fx:id="toPayAmountLabel" layoutX="556.0" layoutY="361.0" prefHeight="27.0" prefWidth="66.0" style="-fx-text-fill: red;" text="0">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
-      <Label layoutX="353.0" layoutY="395.0" prefHeight="27.0" prefWidth="190.0" style="-fx-text-fill: green;" text="Available Weeks          :">
+      <Label layoutX="353.0" layoutY="395.0" prefHeight="27.0" prefWidth="198.0" style="-fx-text-fill: black;" text="Available Weeks          :">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
-      <Label fx:id="availableWeeksLabel" layoutX="555.0" layoutY="395.0" prefHeight="27.0" prefWidth="190.0" style="-fx-text-fill: green;" text="Weeks">
+      <Label fx:id="availableWeeksLabel" layoutX="555.0" layoutY="395.0" prefHeight="27.0" prefWidth="190.0" style="-fx-text-fill: red;" text="Weeks">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
    </children>
 </AnchorPane>
