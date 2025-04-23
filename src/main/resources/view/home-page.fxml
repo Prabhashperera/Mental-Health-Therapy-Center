@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="702.0" prefWidth="1383.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.HomePageController">
    <children>
-      <AnchorPane layoutX="540.0" layoutY="20.0" prefHeight="42.0" prefWidth="793.0" style="-fx-background-color: blue;">
+      <AnchorPane layoutX="821.0" layoutY="20.0" prefHeight="42.0" prefWidth="535.0" style="-fx-background-color: darkblue;">
          <children>
             <Label fx:id="currentTimeShow" layoutX="207.0" layoutY="11.0" style="-fx-text-fill: white;" text="00:00:00">
                <font>
@@ -44,7 +44,7 @@
             <Button layoutX="40.0" layoutY="232.0" mnemonicParsing="false" onAction="#sessionBookingOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Booking" />
          </children>
       </AnchorPane>
-      <Text layoutX="297.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Therapy Center" wrappingWidth="222.40000000000003">
+      <Text layoutX="365.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERANITY MENTAL HEALTH THERAPY" wrappingWidth="363.99997558593753">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

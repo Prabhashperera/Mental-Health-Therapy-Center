@@ -4,12 +4,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="610.0" prefWidth="1060.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.RegisterPageController">
    <children>
-      <Label layoutX="133.0" layoutY="109.0" text="Patient ID  :">
+      <ImageView fitHeight="610.0" fitWidth="1060.0" opacity="0.76" pickOnBounds="true">
+         <image>
+            <Image url="@../Imgs/bg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="133.0" layoutY="111.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Patient ID              :" textFill="#243382">
          <font>
             <Font size="18.0" />
          </font>
@@ -18,32 +25,32 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Label layoutX="133.0" layoutY="157.0" text="Patient Name  :">
+      <Label layoutX="133.0" layoutY="153.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Patient Name        :" textFill="#243382">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="idLabel" layoutX="350.0" layoutY="109.0" text="ID - 30030">
+      <Label fx:id="idLabel" layoutX="350.0" layoutY="111.0" text="ID - 30030" textFill="#0b0070">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="134.0" layoutY="194.0" text="Patient Age :">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="133.0" layoutY="235.0" text="Mobile Number  :">
+      <Label layoutX="134.0" layoutY="196.0" prefHeight="27.0" prefWidth="171.0" style="-fx-font-weight: bold;" text="Patient Age           :" textFill="#243382">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="134.0" layoutY="277.0" text="Medical History  :">
+      <Label layoutX="133.0" layoutY="240.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Mobile Number    :" textFill="#243382">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="noteLabel" layoutX="345.0" layoutY="287.0" prefHeight="146.0" prefWidth="392.0" promptText="Note ...." style="-fx-background-color: transparent; -fx-border-color: blue;">
+      <Label layoutX="134.0" layoutY="285.0" prefHeight="27.0" prefWidth="178.0" style="-fx-font-weight: bold;" text="Medical History    :" textFill="#243382">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="noteLabel" layoutX="345.0" layoutY="287.0" prefHeight="146.0" prefWidth="392.0" promptText="Note ...." style="-fx-border-color: blue; -fx-background-color: transparent;">
          <font>
             <Font size="14.0" />
          </font></TextArea>
