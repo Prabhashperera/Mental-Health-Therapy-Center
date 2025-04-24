@@ -198,4 +198,8 @@ public class RegisterPageController implements Initializable {
         String nameRegex = "^[A-Za-z ]+$"; // Allows only letters and spaces
         return name.matches(nameRegex);
     }
+
+    public void searchOnClick(ActionEvent actionEvent) {
+
+    }
 }

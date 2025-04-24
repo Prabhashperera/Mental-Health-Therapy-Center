@@ -18,21 +18,21 @@
             <Image url="@../Imgs/bg.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="86.0" layoutY="80.0" opacity="0.68" prefHeight="320.0" prefWidth="862.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #03045E, #023E8A); -fx-background-radius: 10;" />
-      <Pane layoutX="86.0" layoutY="441.0" prefHeight="74.0" prefWidth="862.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #03045E, #023E8A); -fx-background-radius: 10;">
+      <Pane layoutX="86.0" layoutY="80.0" opacity="0.68" prefHeight="320.0" prefWidth="862.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #03045E, #023E8A); -fx-background-radius: 10;">
          <children>
-            <MenuButton fx:id="menuButton" layoutX="258.0" layoutY="-177.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="392.0" text="User Role">
+            <MenuButton fx:id="menuButton" layoutX="257.0" layoutY="183.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="392.0" text="User Role">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#adminOnAction" text="Admin" />
                 <MenuItem mnemonicParsing="false" onAction="#receptionistOnAction" text="Receptionist" />
               </items>
             </MenuButton>
          </children></Pane>
+      <Pane layoutX="86.0" layoutY="441.0" opacity="0.65" prefHeight="74.0" prefWidth="862.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #03045E, #023E8A); -fx-background-radius: 10;" />
       <TextField fx:id="userNameLabel" layoutX="345.0" layoutY="173.0" prefHeight="34.0" prefWidth="392.0" promptText="User Name" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <Label layoutX="237.0" layoutY="181.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="User Name  :" textFill="WHITE">
+      <Label layoutX="237.0" layoutY="181.0" prefHeight="27.0" prefWidth="98.0" style="-fx-font-weight: bold;" text="User Name  :" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -46,12 +46,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <Label layoutX="236.0" layoutY="219.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Password    :" textFill="WHITE">
+      <Label layoutX="236.0" layoutY="219.0" prefHeight="27.0" prefWidth="97.0" style="-fx-font-weight: bold;" text="Password    :" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="237.0" layoutY="267.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Select Role  :" textFill="WHITE">
+      <Label layoutX="237.0" layoutY="267.0" prefHeight="27.0" prefWidth="98.0" style="-fx-font-weight: bold;" text="Select Role  :" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
