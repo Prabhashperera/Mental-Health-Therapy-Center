@@ -99,4 +99,11 @@ public class HomePageController implements Initializable {
         SessionBookingController controller = loader.getController();
         controller.setHomePageController(this);
     }
+
+    public void usersOnClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/subPages/userManage.fxml"));
+        AnchorPane pane = loader.load(); // This loads the UI
+        middlePane.getChildren().clear();
+        middlePane.getChildren().add(pane);
+    }
 }

@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="610.0" prefWidth="1060.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.SessionBookingController">
    <children>
-      <ImageView fitHeight="610.0" fitWidth="1060.0" opacity="0.39" pickOnBounds="true">
+      <ImageView fitHeight="610.0" fitWidth="1060.0" opacity="0.27" pickOnBounds="true">
          <image>
             <Image url="@../Imgs/bg.jpg" />
          </image>
@@ -57,7 +57,7 @@
       <Button fx:id="deleteBtn" layoutX="522.0" layoutY="508.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
       <Button layoutX="718.0" layoutY="508.0" mnemonicParsing="false" onAction="#showBookingsTableOnClick" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Bookings" />
       <DatePicker fx:id="dateLabel" layoutX="441.0" layoutY="140.0" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: transparent;" />
-      <MenuButton fx:id="timeMenuBtn" layoutX="441.0" layoutY="190.0" mnemonicParsing="false" onAction="#menuBtnOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: black; -fx-text-fill: white;" text="Select Booking Time">
+      <MenuButton fx:id="timeMenuBtn" layoutX="441.0" layoutY="190.0" mnemonicParsing="false" onAction="#menuBtnOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #ff7b00; -fx-text-fill: white;" text="Select Booking Time">
          <items>
             <MenuItem mnemonicParsing="false" text="1:30" />
             <MenuItem mnemonicParsing="false" text="2:30" />

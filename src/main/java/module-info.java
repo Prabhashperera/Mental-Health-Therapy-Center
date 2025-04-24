@@ -5,6 +5,8 @@ module org.example.mentalheaththerapycenter {
     requires java.naming;
     requires jakarta.persistence;
     requires static lombok;
+    requires spring.security.crypto;
+    requires spring.security.core;
 
 
     opens lk.project.healthCareCenter to javafx.fxml;

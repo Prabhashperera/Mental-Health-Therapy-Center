@@ -40,7 +40,7 @@
             <Button layoutX="40.0" layoutY="179.0" mnemonicParsing="false" onAction="#programOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Select Program" />
             <Button layoutX="40.0" layoutY="382.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Payment" />
             <Button layoutX="40.0" layoutY="450.0" mnemonicParsing="false" onAction="#therapistManageOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Therapist Manage" />
-            <Button layoutX="40.0" layoutY="521.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Users" />
+            <Button layoutX="40.0" layoutY="521.0" mnemonicParsing="false" onAction="#usersOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Users" />
             <Button layoutX="40.0" layoutY="250.0" mnemonicParsing="false" onAction="#sessionBookingOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Session Booking" />
          </children>
       </AnchorPane>
