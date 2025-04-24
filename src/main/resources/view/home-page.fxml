@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="702.0" prefWidth="1383.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.HomePageController">
    <children>
-      <AnchorPane layoutX="821.0" layoutY="20.0" prefHeight="42.0" prefWidth="535.0" style="-fx-background-color: darkblue;">
+      <AnchorPane layoutX="821.0" layoutY="18.0" prefHeight="42.0" prefWidth="535.0" style="-fx-background-color: #0077B6;">
          <children>
             <Label fx:id="currentTimeShow" layoutX="207.0" layoutY="11.0" style="-fx-text-fill: white;" text="00:00:00">
                <font>
@@ -34,17 +34,17 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="702.0" prefWidth="262.0" style="-fx-background-color: darkblue;">
+      <AnchorPane prefHeight="702.0" prefWidth="262.0" style="-fx-background-color: #03045E;">
          <children>
-            <Button layoutX="40.0" layoutY="37.0" mnemonicParsing="false" onAction="#registerOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Register Patient" />
-            <Button layoutX="40.0" layoutY="88.0" mnemonicParsing="false" onAction="#programOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Select Program" />
-            <Button layoutX="40.0" layoutY="139.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Payment" />
-            <Button layoutX="40.0" layoutY="470.0" mnemonicParsing="false" onAction="#therapistManageOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Therapist Manage" />
-            <Button layoutX="40.0" layoutY="521.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Manage" />
-            <Button layoutX="40.0" layoutY="232.0" mnemonicParsing="false" onAction="#sessionBookingOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: white;" text="Session Booking" />
+            <Button layoutX="40.0" layoutY="107.0" mnemonicParsing="false" onAction="#registerOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Register Patient" />
+            <Button layoutX="40.0" layoutY="179.0" mnemonicParsing="false" onAction="#programOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Select Program" />
+            <Button layoutX="40.0" layoutY="382.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Payment" />
+            <Button layoutX="40.0" layoutY="450.0" mnemonicParsing="false" onAction="#therapistManageOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Therapist Manage" />
+            <Button layoutX="40.0" layoutY="521.0" mnemonicParsing="false" onAction="#paymentOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Users" />
+            <Button layoutX="40.0" layoutY="250.0" mnemonicParsing="false" onAction="#sessionBookingOnClick" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #0077B6; -fx-font-weight: bold; -fx-text-fill: white;" text="Session Booking" />
          </children>
       </AnchorPane>
-      <Text layoutX="365.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERANITY MENTAL HEALTH THERAPY" wrappingWidth="363.99997558593753">
+      <Text layoutX="365.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERANITY MENTAL HEALTH THERAPY" wrappingWidth="363.99997558593753">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

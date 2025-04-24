@@ -7,64 +7,67 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="1060.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.RegisterPageController">
+<AnchorPane prefHeight="610.0" prefWidth="1060.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.healthCareCenter.controller.RegisterPageController">
    <children>
-      <ImageView fitHeight="610.0" fitWidth="1060.0" opacity="0.76" pickOnBounds="true">
+      <ImageView fitHeight="610.0" fitWidth="1060.0" opacity="0.24" pickOnBounds="true">
          <image>
             <Image url="@../Imgs/bg.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="133.0" layoutY="111.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Patient ID              :" textFill="#243382">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="nameLabel" layoutX="345.0" layoutY="153.0" prefHeight="34.0" prefWidth="392.0" promptText="Ajith Muthukumara" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;">
+      <Pane layoutX="86.0" layoutY="80.0" opacity="0.68" prefHeight="320.0" prefWidth="862.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #03045E, #023E8A); -fx-background-radius: 10;" />
+      <Pane layoutX="86.0" layoutY="441.0" prefHeight="74.0" prefWidth="862.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #03045E, #023E8A); -fx-background-radius: 10;" />
+      <Label layoutX="197.0" layoutY="144.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Patient ID              :" textFill="WHITE">
          <font>
             <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameLabel" layoutX="345.0" layoutY="173.0" prefHeight="34.0" prefWidth="392.0" promptText="Ajith Muthukumara" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;">
+         <font>
+            <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <Label layoutX="133.0" layoutY="153.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Patient Name        :" textFill="#243382">
+      <Label layoutX="197.0" layoutY="177.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Patient Name        :" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="idLabel" layoutX="350.0" layoutY="111.0" text="ID - 30030" textFill="#0b0070">
+      <Label fx:id="idLabel" layoutX="350.0" layoutY="151.0" text="ID - 30030" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="134.0" layoutY="196.0" prefHeight="27.0" prefWidth="171.0" style="-fx-font-weight: bold;" text="Patient Age           :" textFill="#243382">
+      <Label layoutX="198.0" layoutY="213.0" prefHeight="27.0" prefWidth="171.0" style="-fx-font-weight: bold;" text="Patient Age           :" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="240.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Mobile Number    :" textFill="#243382">
+      <Label layoutX="197.0" layoutY="247.0" prefHeight="27.0" prefWidth="192.0" style="-fx-font-weight: bold;" text="Mobile Number    :" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="134.0" layoutY="285.0" prefHeight="27.0" prefWidth="178.0" style="-fx-font-weight: bold;" text="Medical History    :" textFill="#243382">
+      <Label layoutX="198.0" layoutY="284.0" prefHeight="27.0" prefWidth="178.0" style="-fx-font-weight: bold;" text="Medical History    :" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="noteLabel" layoutX="345.0" layoutY="287.0" prefHeight="146.0" prefWidth="392.0" promptText="Note ...." style="-fx-border-color: blue; -fx-background-color: transparent;">
+      <TextArea fx:id="noteLabel" layoutX="345.0" layoutY="296.0" prefHeight="66.0" prefWidth="392.0" promptText="Note ...." style="-fx-border-color: blue; -fx-border-radius: 10px; -fx-background-color: transparent; -fx-background-radius: ;">
          <font>
             <Font size="14.0" />
          </font></TextArea>
-      <TextField fx:id="ageLabel" layoutX="345.0" layoutY="197.0" prefHeight="34.0" prefWidth="392.0" promptText="32" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;">
+      <TextField fx:id="ageLabel" layoutX="345.0" layoutY="208.0" prefHeight="34.0" prefWidth="392.0" promptText="32" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <TextField fx:id="numberLabel" layoutX="345.0" layoutY="232.0" prefHeight="34.0" prefWidth="392.0" promptText="+94 704570039" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;">
+      <TextField fx:id="numberLabel" layoutX="345.0" layoutY="247.0" prefHeight="34.0" prefWidth="392.0" promptText="+94 704570039" style="-fx-border-width: 0 0 1px 0; -fx-border-color: blue; -fx-background-color: transparent;">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <Button fx:id="saveBtn" layoutX="172.0" layoutY="482.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
-      <Button fx:id="updateBtn" layoutX="294.0" layoutY="482.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="34.0" prefWidth="161.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
-      <Button fx:id="deleteBtn" layoutX="465.0" layoutY="481.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
-      <Button layoutX="648.0" layoutY="481.0" mnemonicParsing="false" onAction="#showTableOnClick" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Patients" />
+      <Button fx:id="saveBtn" layoutX="171.0" layoutY="463.0" mnemonicParsing="false" onAction="#saveOnClick" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: #38b000; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" />
+      <Button fx:id="updateBtn" layoutX="339.0" layoutY="463.0" mnemonicParsing="false" onAction="#updateOnClick" prefHeight="34.0" prefWidth="161.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update" />
+      <Button fx:id="deleteBtn" layoutX="517.0" layoutY="462.0" mnemonicParsing="false" onAction="#deleteOnClick" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete" />
+      <Button layoutX="736.0" layoutY="462.0" mnemonicParsing="false" onAction="#showTableOnClick" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;" text="Show Patients" />
    </children>
 </AnchorPane>
